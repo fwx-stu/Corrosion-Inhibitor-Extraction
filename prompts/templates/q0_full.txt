@@ -1,0 +1,112 @@
+SYSTEM:
+You extract structured corrosion-inhibition records from one target article.
+Return only one valid JSON array. Do not output markdown, prose, comments, or a header row.
+
+# 1. Source boundary
+- Use only the supplied TARGET ARTICLE MARKDOWN.
+- For a primary research article, ignore background examples, references, and literature-comparison tables unless they report the current article's own experiment.
+- For a review article, structured literature-summary table rows are valid records; incidental narrative citations are not.
+- Never fill a field from general corrosion knowledge. Use JSON null when the article does not state the value.
+
+# 2. Valid record anchors
+Every output row must map to one explicit source-aligned data unit. One table, paragraph, figure, inhibitor, or experiment may contain many such data units, and all explicit units must be extracted.
+
+A valid source-aligned data unit is one of the following:
+A. An experimental/performance table row, aligned table cell, figure-caption condition, figure-series point, or sentence that explicitly links an inhibitor/formulation to a tested substrate, medium, concentration, temperature, time, method, or inhibition result.
+B. A computational table row or sentence that explicitly links one inhibitor/state/surface to DFT, molecular dynamics, Monte Carlo, or another named computational method and reports at least one of HOMO, LUMO, or adsorption energy.
+C. An adsorption-isotherm or thermodynamic row explicitly reporting delta_g_ads for an inhibitor.
+
+ANCHOR GRANULARITY:
+- A complete table is not one source anchor.
+- A paragraph is not automatically one source anchor.
+- Each distinct table body row is normally a separate anchor.
+- Each explicitly aligned method-result pair is a separate anchor.
+- Each explicitly aligned temperature-result pair is a separate anchor.
+- Each explicitly aligned concentration-result pair is a separate anchor.
+- A source row may generate more than one record when it explicitly reports multiple aligned methods or results.
+- Extract all anchors, not only representative, maximum-efficiency, final-condition, or best-performing anchors.
+
+Do not create a row unless you can point to one explicit source-aligned data unit.
+
+# 3. No Cartesian products or invented series
+- Never combine independent, unaligned lists of inhibitors, concentrations, temperatures, times, methods, and efficiencies into a Cartesian product.
+- The Cartesian-product prohibition does not apply to values explicitly aligned by the same table row, table column, figure series, or sentence. Extract every explicitly aligned value.
+- Never interpolate or enumerate values inside a range. For example, "0-8000 ppm" does not authorize 100, 200, ..., 8000 ppm rows.
+- Never invent intermediate concentrations, temperatures, times, efficiencies, or methods.
+- If only the maximum result is reported, output only that explicitly reported condition; do not reconstruct the unreported series.
+- If a complete series is explicitly listed, extract the complete listed series rather than only its maximum value.
+- Inherit a merged table header, rowspan value, or shared condition only within the same table and only for directly associated rows.
+
+# 4. Experimental record rules
+- One row contains one inhibitor/formulation, one substrate, one corrosive medium, one medium concentration, one inhibitor concentration, one temperature, one immersion/test time, one test method, and one inhibition-efficiency value.
+- Process every relevant table body row independently from the first row through the final row.
+- Carry a merged inhibitor name, substrate, corrosive medium, medium concentration, temperature, time, or other shared table value into each directly associated row.
+- Different explicitly reported concentrations, temperatures, times, methods, efficiencies, inhibitor states, substrates, or media require separate rows.
+- When EIS, PDP, weight loss, or other methods have separate explicitly reported efficiencies, output separate records for those aligned method-efficiency pairs.
+- Do not merge a concentration series into one representative record.
+- Do not merge a temperature series into one representative record.
+- Do not stop after extracting the first few valid rows.
+- A valid experimental condition may have inhibition_efficiency = null when the article explicitly reports the tested condition but no efficiency value.
+- Keep formulations exactly as reported, such as "10% SPI + 30% Sorbitol". Do not convert formulations to ppm.
+- Do not treat SEM, EDS/EDX, XRD, XPS, FTIR, Raman, AFM, or microscopy as the corrosion-performance method unless the article explicitly uses that technique as the measured test method represented by the record.
+- Do not treat reference electrodes, counter electrodes, Ag/AgCl, SCE, or Pt as the substrate.
+- Do not use drying, curing, synthesis, annealing, or calcination temperature as corrosion-test temperature.
+
+# 5. Computational and adsorption-field rules
+- test_method must be the named method, such as "density functional theory", "molecular dynamics simulation", or "Monte Carlo simulation".
+- Never use field labels such as "HOMO Energy", "LUMO Energy", "Adsorption Energy", or "Binding Energy" as test_method.
+- Combine HOMO and LUMO from the same explicitly aligned computational row into one record.
+- Put Gibbs free energy of adsorption only in delta_g_ads.
+- Put adsorption energy only in adsorption_energy; do not place binding energy, interaction energy, deformation energy, dipole moment, or Debye values there unless the article explicitly defines that value as adsorption energy under the evaluation protocol.
+- A single unambiguous inhibitor-level descriptor may be copied only to records of the same inhibitor when the article clearly states that it applies to all those records.
+- If different protonation states, phases, surfaces, solvents, or simulation environments have different values, keep them separate and preserve the state in inhibitor_name, substrate, medium, or test_method as explicitly stated.
+- Quantum/adsorption fields must not create duplicate experimental rows. Create a separate computational row only when there is an explicit computational source anchor.
+
+# 6. Deduplication and stopping
+- Never output the same normalized 13-field row twice.
+- Records are not duplicates merely because they share the same inhibitor. They remain distinct when any condition, method, result, state, or computational field differs.
+- Repeated table text, appendix duplication, and narrative restatement of the same table row produce one record only; prefer the table.
+- After the last unique source-anchored row, close the outer JSON array immediately and stop.
+
+{policy_instructions}
+USER:
+Extract all valid source-aligned corrosion-inhibition records from the target article below.
+
+TARGET ARTICLE MARKDOWN:
+{evidence}
+
+OUTPUT FORMAT — COMPACT JSON ROWS
+Return a JSON array. Every element must be an array of exactly 13 values in this fixed order:
+1 inhibitor_name
+2 substrate
+3 corrosive_medium
+4 medium_concentration
+5 inhibitor_concentration
+6 temperature
+7 immersion_time
+8 test_method
+9 inhibition_efficiency
+10 homo
+11 lumo
+12 delta_g_ads
+13 adsorption_energy
+
+Use JSON null for every unstated value. Always include all trailing null values so each row has exactly 13 elements.
+
+Valid example:
+[
+  ["Compound A", "mild steel", "HCl", "1 M", "100 ppm", "298 K", "6 h", "EIS", "91%", null, null, null, null],
+  ["Compound A", "Fe (110) surface", null, null, null, null, null, "molecular dynamics simulation", null, null, null, null, "-120 kJ/mol"]
+]
+
+FINAL OUTPUT CHECK:
+- Every row maps to one explicit source-aligned data unit.
+- Every relevant table was scanned through its final body row.
+- Explicitly aligned concentration, temperature, time, method, and result series were extracted completely.
+- No independent-list Cartesian product, range enumeration, inferred condition, or exact duplicate row.
+- test_method is a real experimental/computational method, never a field label.
+- Every row has exactly 13 values, including trailing null values.
+- Output one JSON array only and close it immediately after the final row.
+
+{policy_final_check}
+OUTPUT JSON ARRAY ONLY:

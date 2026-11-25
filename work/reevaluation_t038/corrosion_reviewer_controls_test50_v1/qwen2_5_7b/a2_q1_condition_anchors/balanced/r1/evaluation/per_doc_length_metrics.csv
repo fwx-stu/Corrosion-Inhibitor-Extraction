@@ -1,0 +1,6 @@
+strategy,bin,doc_count,record_tp,record_pred_total,record_gold_total,precision,recall,F1
+qwen2_5_7b__a2_q1_condition_anchors__balanced__r1,0~4999,0,0,0,0,0.0,0.0,0.0
+qwen2_5_7b__a2_q1_condition_anchors__balanced__r1,5000~9999,0,0,0,0,0.0,0.0,0.0
+qwen2_5_7b__a2_q1_condition_anchors__balanced__r1,10000~19999,0,0,0,0,0.0,0.0,0.0
+qwen2_5_7b__a2_q1_condition_anchors__balanced__r1,20000~39999,0,0,0,0,0.0,0.0,0.0
+qwen2_5_7b__a2_q1_condition_anchors__balanced__r1,40000+,50,1305,1894,2396,0.6890179514255543,0.5446577629382304,0.6083916083916083

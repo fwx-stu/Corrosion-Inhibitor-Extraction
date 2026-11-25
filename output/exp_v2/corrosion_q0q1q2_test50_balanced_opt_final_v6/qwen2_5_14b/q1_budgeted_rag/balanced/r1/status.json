@@ -1,0 +1,23 @@
+{
+  "updated_at": "2026-07-17 02:56:03",
+  "run_name": "qwen2_5_14b__q1_budgeted_rag__balanced__r1",
+  "paper_id": "xml_9708",
+  "doc_index": 50,
+  "docs_total": 50,
+  "docs_ok": 50,
+  "docs_failed": 0,
+  "parse_errors": 2,
+  "empty_predictions": 0,
+  "empty_prediction_eligible": 50,
+  "input_over_budget": 0,
+  "input_truncations": 0,
+  "output_truncations": 2,
+  "last_doc_sec": 456.076,
+  "elapsed_sec": 44832.599,
+  "eta_sec": 0.0,
+  "records_last": 38,
+  "records_total": 2572,
+  "evidence_last": 40,
+  "evidence_total": 1951,
+  "last_parse_error": null
+}

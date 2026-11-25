@@ -1,0 +1,200 @@
+{
+  "experiment_id": "corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6",
+  "dataset_name": "dev37",
+  "dataset_role": "dev",
+  "expected_paper_count": 37,
+  "config_path": "configs/experiment_q0q1q2_dev37_prompt_robustness_opt_v6.yaml",
+  "created_at": "2026-07-16 04:35:01",
+  "jobs_expected": 27,
+  "jobs": [
+    {
+      "model_key": "qwen2_5_3b",
+      "strategy": "q0_safe_full",
+      "prompt_variant": "recall",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_3b/q0_safe_full/recall/r1"
+    },
+    {
+      "model_key": "qwen2_5_3b",
+      "strategy": "q0_safe_full",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_3b/q0_safe_full/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_3b",
+      "strategy": "q0_safe_full",
+      "prompt_variant": "precision",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_3b/q0_safe_full/precision/r1"
+    },
+    {
+      "model_key": "qwen2_5_3b",
+      "strategy": "q1_budgeted_rag",
+      "prompt_variant": "recall",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_3b/q1_budgeted_rag/recall/r1"
+    },
+    {
+      "model_key": "qwen2_5_3b",
+      "strategy": "q1_budgeted_rag",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_3b/q1_budgeted_rag/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_3b",
+      "strategy": "q1_budgeted_rag",
+      "prompt_variant": "precision",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_3b/q1_budgeted_rag/precision/r1"
+    },
+    {
+      "model_key": "qwen2_5_3b",
+      "strategy": "q2_table_aware_rag",
+      "prompt_variant": "recall",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_3b/q2_table_aware_rag/recall/r1"
+    },
+    {
+      "model_key": "qwen2_5_3b",
+      "strategy": "q2_table_aware_rag",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_3b/q2_table_aware_rag/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_3b",
+      "strategy": "q2_table_aware_rag",
+      "prompt_variant": "precision",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_3b/q2_table_aware_rag/precision/r1"
+    },
+    {
+      "model_key": "qwen2_5_7b",
+      "strategy": "q0_safe_full",
+      "prompt_variant": "recall",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q0_safe_full/recall/r1"
+    },
+    {
+      "model_key": "qwen2_5_7b",
+      "strategy": "q0_safe_full",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q0_safe_full/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_7b",
+      "strategy": "q0_safe_full",
+      "prompt_variant": "precision",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q0_safe_full/precision/r1"
+    },
+    {
+      "model_key": "qwen2_5_7b",
+      "strategy": "q1_budgeted_rag",
+      "prompt_variant": "recall",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q1_budgeted_rag/recall/r1"
+    },
+    {
+      "model_key": "qwen2_5_7b",
+      "strategy": "q1_budgeted_rag",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q1_budgeted_rag/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_7b",
+      "strategy": "q1_budgeted_rag",
+      "prompt_variant": "precision",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q1_budgeted_rag/precision/r1"
+    },
+    {
+      "model_key": "qwen2_5_7b",
+      "strategy": "q2_table_aware_rag",
+      "prompt_variant": "recall",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q2_table_aware_rag/recall/r1"
+    },
+    {
+      "model_key": "qwen2_5_7b",
+      "strategy": "q2_table_aware_rag",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q2_table_aware_rag/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_7b",
+      "strategy": "q2_table_aware_rag",
+      "prompt_variant": "precision",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q2_table_aware_rag/precision/r1"
+    },
+    {
+      "model_key": "qwen2_5_14b",
+      "strategy": "q0_safe_full",
+      "prompt_variant": "recall",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_14b/q0_safe_full/recall/r1"
+    },
+    {
+      "model_key": "qwen2_5_14b",
+      "strategy": "q0_safe_full",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_14b/q0_safe_full/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_14b",
+      "strategy": "q0_safe_full",
+      "prompt_variant": "precision",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_14b/q0_safe_full/precision/r1"
+    },
+    {
+      "model_key": "qwen2_5_14b",
+      "strategy": "q1_budgeted_rag",
+      "prompt_variant": "recall",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_14b/q1_budgeted_rag/recall/r1"
+    },
+    {
+      "model_key": "qwen2_5_14b",
+      "strategy": "q1_budgeted_rag",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_14b/q1_budgeted_rag/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_14b",
+      "strategy": "q1_budgeted_rag",
+      "prompt_variant": "precision",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_14b/q1_budgeted_rag/precision/r1"
+    },
+    {
+      "model_key": "qwen2_5_14b",
+      "strategy": "q2_table_aware_rag",
+      "prompt_variant": "recall",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_14b/q2_table_aware_rag/recall/r1"
+    },
+    {
+      "model_key": "qwen2_5_14b",
+      "strategy": "q2_table_aware_rag",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_14b/q2_table_aware_rag/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_14b",
+      "strategy": "q2_table_aware_rag",
+      "prompt_variant": "precision",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_14b/q2_table_aware_rag/precision/r1"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+# Minimal runtime
+pyyaml>=6.0
+numpy>=1.24
+
+# Local model inference; install on server when needed
+transformers>=4.45.0
+torch
+accelerate
+
+# Legacy high-recall local RAG restored from small-model
+sentence-transformers>=2.7.0
+rank-bm25>=0.2.2
+
+# Original Markdown splitter used by default for all LLM/SLM RAG experiments
+langchain-core>=0.2
+langchain-text-splitters>=0.2
+# Optional reranker backend; installed only if you use FlagEmbedding reranker
+# FlagEmbedding>=1.2.10
+
+# API models such as GLM-4-Plus through OpenAI-compatible endpoint
+openai>=1.0.0
+
+# Automatic experiment charts
+matplotlib>=3.7
+
+# Deterministic Hungarian record matching for formal evaluation
+scipy>=1.10
+beautifulsoup4>=4.12
+
+# Validation and progress utilities used by the packaged run scripts
+pytest>=7.0
+tqdm>=4.65

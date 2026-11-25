@@ -1,0 +1,44 @@
+"Please summarize the following domain knowledge fragments into a structured wiki reference:\n{global_context}\n"
+"""
+You are a corrosion science domain expert. The fragments below are retrieved from a knowledge base of corrosion inhibition research papers (NOT from the target paper being analyzed).
+
+Your task is to distill these fragments into a compact, structured **Domain Wiki** for use as BACKGROUND CONTEXT ONLY during data extraction from a new target paper.
+
+# What to Capture
+1. Inhibitor class patterns and their typical IE % ranges
+2. Quantitative experimental parameter ranges: concentration ranges, temperature ranges, immersion time ranges
+3. DFT/quantum chemistry parameter ranges: HOMO, LUMO, ΔG_ads, adsorption energy
+4. General substrate conventions
+
+# CRITICAL: Do NOT Enumerate Categorical Values
+- **Do NOT list specific test method names** (e.g., do NOT write "weight loss, EIS, polarization"). The downstream task requires that test method fields be copied verbatim from the target paper — if the wiki provides method name lists, the extraction model will use them as fill-in choices and contaminate categorical fields.
+- **Do NOT list specific medium compound names** as alternatives (e.g., do NOT write "HCl, H2SO4, or NaCl solution"). Describe media only with concentration ranges, not compound names.
+- For methods and media: describe only with aggregate statistics (e.g., "electrochemical and gravimetric techniques are routinely used" — no specific names).
+
+# Output Format
+Plain text with headers and bullets. Target 150-300 words.
+Prefix all ranges with "Observed range:" or "Typically reported:" to signal reference-only context.
+
+# Critical Rules
+- Do NOT invent data not present in the fragments.
+- Do NOT attribute specific values to specific papers.
+- Focus on RANGES for quantitative fields (temperature, concentration, HOMO/LUMO, IE%).
+- These are REFERENCE RANGES to assist terminology understanding — NOT default values to fill in absent fields.
+- If fragments conflict, note the broader range.
+
+# Example Structure (follow this pattern)
+## Inhibitor Classes
+- Schiff bases: Typically reported IE 80-95% at 100-500 ppm
+- Amino acids: Observed range IE 60-80%
+
+## Quantum Chemistry Ranges
+- HOMO: Observed range -6 to -4 eV for effective organic inhibitors
+- LUMO: Typically reported -2 to 0 eV
+- ΔG_ads: Observed range -20 to -5 kJ/mol
+
+## Quantitative Experimental Ranges (reference only, do NOT fill in absent fields)
+- Temperature: Observed range 25-60 °C across papers
+- Immersion time: Observed range 1-24 h
+- Medium concentration: Observed range 0.5-2 M across papers
+- Inhibitor concentration: Observed range 10-500 ppm
+"""

@@ -1,0 +1,14 @@
+# Balanced Policy
+- Recover all clearly explicit experimental and computational source anchors while rejecting inferred combinations.
+- Prefer table row/column alignment over narrative reconstruction.
+- Emit explicit condition records even when optional fields are null.
+- Populate a field only when it is explicitly linked to the same inhibitor and source anchor.
+- Split genuine multi-condition tables, but never expand numeric ranges or combine independent lists.
+- Deduplicate overlapping chunks, repeated tables, and narrative restatements.
+
+<<<FINAL_CHECK>>>
+BALANCED CHECK BEFORE OUTPUT:
+- Every explicit source anchor is represented once.
+- Every populated value is aligned to that anchor.
+- No Cartesian product, range enumeration, field-label method, or duplicate row is present.
+- Every row has exactly 13 values and the outer array is closed.

@@ -1,0 +1,23 @@
+{
+  "updated_at": "2026-07-16 14:28:50",
+  "run_name": "qwen2_5_14b__q0_safe_full__balanced__r1",
+  "paper_id": "xml_9708",
+  "doc_index": 50,
+  "docs_total": 50,
+  "docs_ok": 50,
+  "docs_failed": 0,
+  "parse_errors": 1,
+  "empty_predictions": 0,
+  "empty_prediction_eligible": 50,
+  "input_over_budget": 0,
+  "input_truncations": 0,
+  "output_truncations": 1,
+  "last_doc_sec": 88.913,
+  "elapsed_sec": 5891.793,
+  "eta_sec": 0.0,
+  "records_last": 38,
+  "records_total": 2053,
+  "evidence_last": 1,
+  "evidence_total": 50,
+  "last_parse_error": null
+}

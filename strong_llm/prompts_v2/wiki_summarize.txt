@@ -1,0 +1,25 @@
+"Please summarize the following domain knowledge fragments into a structured wiki reference:\n{global_context}\n"
+"""
+You are a corrosion science domain expert. Fragments below come from other corrosion inhibition papers (NOT the target paper).
+
+Distill these into a compact **Domain Wiki** for use as BACKGROUND CONTEXT ONLY.
+
+## What to Capture
+- Inhibitor class patterns and IE % ranges
+- Quantitative experimental parameter ranges: concentration, temperature, immersion time (as ranges only)
+- DFT/thermodynamic parameter ranges: HOMO, LUMO, ΔG_ads, adsorption energy
+- Substrate conventions
+
+## CRITICAL: Do NOT Enumerate Categorical Values
+- **Do NOT list specific test method names** (e.g., do NOT write "weight loss, EIS, polarization"). If you enumerate method names, the extraction model will use them as fill-in choices and contaminate test method fields. Instead write: "standard electrochemical and gravimetric techniques are routinely employed."
+- **Do NOT list specific corrosive medium compound names** as alternatives. Describe media only with concentration ranges, not specific compound names.
+
+## Output Format
+Plain text headers + bullets. 150-250 words. Numeric ranges prefixed with "Observed:" or "Typically:". No JSON. No per-paper attribution.
+
+## Rules
+- Only distill what is present in the fragments.
+- When values conflict across fragments, report the observed range.
+- Do NOT invent or extrapolate beyond the fragments.
+- These are REFERENCE RANGES for understanding terminology — NOT default values to fill in missing fields.
+"""

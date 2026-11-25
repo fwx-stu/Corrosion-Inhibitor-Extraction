@@ -1,0 +1,85 @@
+fields:
+  - inhibitor_name
+  - substrate
+  - corrosive_medium
+  - medium_concentration
+  - inhibitor_concentration
+  - temperature
+  - immersion_time
+  - test_method
+  - inhibition_efficiency
+  - homo
+  - lumo
+  - delta_g_ads
+  - adsorption_energy
+
+core_fields:
+  - inhibitor_name
+  - substrate
+  - corrosive_medium
+  - medium_concentration
+  - inhibitor_concentration
+  - test_method
+  - inhibition_efficiency
+
+field_groups:
+  performance:
+    fields:
+      - inhibitor_name
+      - inhibitor_concentration
+      - test_method
+      - inhibition_efficiency
+    queries:
+      - inhibition efficiency IE% corrosion inhibition efficiency table
+      - weight loss inhibition efficiency inhibitor concentration
+      - EIS charge transfer resistance inhibition efficiency
+      - potentiodynamic polarization corrosion current inhibition efficiency
+      - Tafel polarization efficiency inhibitor concentration
+      - corrosion rate inhibition efficiency concentration ppm mg/L
+  conditions:
+    fields:
+      - substrate
+      - corrosive_medium
+      - medium_concentration
+      - temperature
+      - immersion_time
+    queries:
+      - experimental section material specimen substrate corrosive medium
+      - test solution HCl H2SO4 NaCl concentration immersion time temperature
+      - electrochemical measurements working electrode solution temperature
+      - weight loss method immersion time temperature acid solution
+      - corrosion tests were performed in solution at room temperature
+  quantum:
+    fields:
+      - homo
+      - lumo
+    queries:
+      - HOMO LUMO quantum chemical parameters DFT table
+      - highest occupied lowest unoccupied molecular orbital energy
+      - EHOMO ELUMO energy gap quantum descriptors
+  adsorption:
+    fields:
+      - delta_g_ads
+      - adsorption_energy
+    queries:
+      - Gibbs free energy of adsorption delta Gads adsorption isotherm
+      - Langmuir adsorption isotherm thermodynamic parameters Kads
+      - adsorption energy molecular dynamics Monte Carlo simulation Eads
+
+
+# Legacy small-model field-level queries. Q1/Q2 use these by default when
+# retrieval uses the legacy_exact protocol (the framework default).
+field_queries:
+  inhibitor_name: inhibitor compound name abbreviation molecule Table inhibitor structure
+  substrate: substrate metal steel alloy electrode material Table specimen
+  corrosive_medium: corrosive medium acid solution electrolyte HCl H2SO4 NaCl Table experimental conditions
+  medium_concentration: acid concentration solution molarity mol/L wt% Table experimental conditions
+  inhibitor_concentration: inhibitor concentration ppm mg/L dosage Table experimental conditions
+  temperature: temperature degrees Celsius Kelvin Table experimental conditions
+  immersion_time: immersion time hours exposure duration Table weight loss experimental conditions
+  test_method: test method weight loss EIS polarization electrochemical Table electrochemical measurements
+  inhibition_efficiency: inhibition efficiency IE% corrosion protection performance Table weight loss electrochemical results
+  homo: HOMO highest occupied molecular orbital energy DFT eV Table quantum chemical parameters
+  lumo: LUMO lowest unoccupied molecular orbital energy DFT eV Table quantum chemical parameters
+  delta_g_ads: Gibbs free energy adsorption delta G kJ/mol Table thermodynamic parameters adsorption
+  adsorption_energy: adsorption energy Eads kcal/mol molecular dynamics Table simulation parameters

@@ -1,0 +1,99 @@
+"Please analyze the following corrosion inhibition research content:\n{content}\n"
+"""
+As an expert in corrosion science literature processing, you will extract experimental data from TWO sources of content:
+1. **TARGET PAPER fragments** (marked [Local-*]) — retrieved sections from the paper being analyzed, selected by semantic search
+2. **DOMAIN CONTEXT** (marked [Global-*]) — related fragments from other papers in the knowledge base
+
+# CRITICAL RULE 1: Strict Source Separation
+- Extract experimental data ONLY from [Local-*] sections (TARGET PAPER fragments)
+- Use [Global-*] sections ONLY to understand terminology, units, and field formats
+- NEVER mix data from [Global-*] into your output records
+- NEVER extract inhibitor names, concentrations, efficiency values, or DFT parameters from [Global-*] sections
+- If the target paper cites values from other papers, treat those as background — do not extract
+
+# CRITICAL RULE 2: Aggressive Deduplication of [Local-*] Fragments
+[Local-*] fragments often overlap — the SAME experimental data point may appear in 2-3 different fragments. You MUST deduplicate aggressively:
+- Two data points are DUPLICATES if they share: inhibitor + substrate + medium concentration + inhibitor concentration + temperature + test method (even if IE values differ slightly due to rounding)
+- When in doubt, treat similar records as duplicates rather than separate entries
+- Text descriptions and table data reporting the same experiment = ONE record (prefer table data)
+- The same IE value in DIFFERENT [Local-*] fragments = likely duplicate → ONE record only
+- The same IE value via different methods in ONE fragment = separate records
+
+# CRITICAL RULE 3: Fragment Reliability Classification
+[Local-*] fragments come from ONE paper, selected by semantic search:
+- Experimental / Results sections → HIGH reliability, extract data
+- Introduction / Review sections → background only, do NOT extract as data
+- Content describing experiments from OTHER cited papers within a [Local-*] → SKIP it
+- When uncertain whether data belongs to the target paper vs. a cited reference → SKIP
+
+# Extraction Requirements
+Extract corrosion inhibition experimental records from [Local-*] sections only.
+Use a **grouped structure**: each inhibitor compound forms one group, shared properties written once, varying conditions listed as data points.
+
+**Group-level fields** (properties of the inhibitor or the overall experiment setup):
+   - inh: Inhibitor Name — exact name, prefer full name if both abbreviation and full name are given
+   - sub: Substrate — metal or material being tested
+   - med: Corrosive Medium — e.g., HCl, H2SO4, NaCl solution
+   - homo: HOMO energy from DFT/quantum chemistry, e.g., "-5.923 eV"
+   - lumo: LUMO energy from DFT/quantum chemistry, e.g., "-2.051 eV"
+   - dg: Gibbs free energy of adsorption (ΔG_ads), e.g., "-16.895 kJ/mol"
+   - eads: Adsorption energy from MD/DFT, e.g., "-180.763 kcal/mol"
+
+**Data-point fields** (varying experimental conditions):
+   - med_c: Medium Concentration — e.g., "1 M", "0.5 mol/L", "3.5 wt.%"
+   - inh_c: Inhibitor Concentration — e.g., "100 ppm", "200 mg/L"
+   - temp: Temperature — e.g., "25 ℃", "298 K"
+   - time: Immersion Time — e.g., "6 h", "24 hours"
+   - method: Test Method — e.g., "weight loss", "EIS", "potentiodynamic polarization"
+   - ie: Inhibition Efficiency — e.g., "85%", "92.4%"
+
+# Grouping Rules
+- Records sharing the same inhibitor + substrate + corrosive medium + quantum chemistry values MUST be merged into ONE group
+- Each data point within a group represents one unique experimental condition combination
+- If only one data point exists, still use the "data" array with one entry
+
+# Record Splitting Rules
+- Create separate data points when the article reports different inhibitor concentrations, temperatures, immersion times, test methods, or inhibition efficiencies
+- When encountering discrete enumerated variables (e.g., testing at 10, 20, 50 ppm or 298, 303 K), MUST split them into separate data points
+- STRICTLY FORBIDDEN to use commas or "~" to merge discrete values into a single field
+
+# Data Prioritization
+- Table data > Text description
+- Explicit values > Ranges
+- Experimental data from target paper > Review/background/comparison with other papers
+- [Local-*] experimental sections > [Local-*] background sections > [Global-*] sections (reference only)
+
+# Extraction Constraints
+- Only extract information explicitly stated in [Local-*] fragments
+- Do NOT infer, guess, or supplement missing values
+- Do NOT extract data that belongs to other papers being cited or compared
+- Do NOT confuse corrosive medium concentration with inhibitor concentration
+- Do NOT list SEM, XPS, FTIR, AFM characterization as test methods
+- If a value is not found, omit the field entirely (do NOT write null or "ND")
+
+# Output Format
+{
+  "inhibitors": [
+    {
+      "inh": "Inhibitor Full Name",
+      "sub": "substrate name",
+      "med": "corrosive medium",
+      "homo": "-5.852 eV",
+      "lumo": "-3.856 eV",
+      "dg": "-9.73 kJ/mol",
+      "eads": "-213.55 kcal/mol",
+      "data": [
+        {"med_c": "1 M", "inh_c": "100 ppm", "temp": "25 ℃", "time": "6 h", "method": "weight loss", "ie": "85.2%"},
+        {"med_c": "1 M", "inh_c": "200 ppm", "temp": "25 ℃", "time": "6 h", "method": "weight loss", "ie": "92.4%"}
+      ]
+    }
+  ]
+}
+
+# Data Rules
+a) Omit any field with no definite data (do NOT write null or "ND")
+b) Use "~" for true ranges only (e.g., "100~200 ppm" when a genuine range is reported)
+c) For discrete values tested separately, ALWAYS split into separate data points
+d) Extract ONLY from [Local-*] sections; use [Global-*] sections as reference only
+e) If no valid experimental records found, return: {"inhibitors": []}
+"""

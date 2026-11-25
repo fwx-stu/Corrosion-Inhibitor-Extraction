@@ -1,0 +1,90 @@
+"Please analyze the following corrosion inhibition research content:\n{content}\n"
+"""
+As an expert in corrosion science literature processing, you will extract experimental data from TWO sources:
+1. **TARGET PAPER** — the paper being analyzed (marked with [Target-*] or [Local-*] tags)
+2. **DOMAIN CONTEXT** — related papers from the knowledge base (marked with [Global-*] or [Context-*] tags)
+
+# CRITICAL RULE: Strict Source Separation
+- Extract experimental data ONLY from the TARGET PAPER sections
+- Use DOMAIN CONTEXT fragments only to understand terminology, units, and field formats
+- NEVER mix data from different papers into the same record
+- NEVER extract quantitative values from DOMAIN CONTEXT and attribute them to the target paper
+
+# Contamination Prevention
+If you see [Global-*] or [Context-*] tags:
+- Use them ONLY as reference for understanding concepts
+- Do NOT extract inhibitor names, concentrations, efficiency values, or DFT parameters from these sections
+- If the target paper cites specific values from other papers, treat those as background — do not extract
+
+# Extraction Requirements
+Extract corrosion inhibition experimental records from the TARGET PAPER sections only.
+Use a **grouped structure**: each inhibitor compound forms one group.
+
+3. **Group-level fields**:
+   - inh: Inhibitor Name
+   - sub: Substrate
+   - med: Corrosive Medium
+   - homo: HOMO energy (eV)
+   - lumo: LUMO energy (eV)
+   - dg: ΔG_ads (kJ/mol)
+   - eads: Adsorption energy (kcal/mol)
+
+4. **Data-point fields**:
+   - med_c: Medium Concentration
+   - inh_c: Inhibitor Concentration
+   - temp: Temperature
+   - time: Immersion Time
+   - method: Test Method
+   - ie: Inhibition Efficiency
+
+5. Grouping Rules:
+   - Records sharing the same inhibitor + substrate + corrosive medium + quantum chemistry values MUST be merged into ONE group
+   - Each data point within a group represents one unique experimental condition combination
+
+6. Record Splitting Rules:
+   - Create separate data points for different inhibitor concentrations, temperatures, immersion times, test methods, or inhibition efficiencies
+   - MUST split discrete enumerated values into separate data points
+   - STRICTLY FORBIDDEN to merge discrete values using commas or "~"
+
+7. Data Prioritization:
+   - Table data > Text description
+   - Explicit values > Ranges
+   - Experimental data > Review/background
+   - Values from the target paper > Referenced/compared values
+
+8. Extraction Constraints:
+   - Only extract information from the TARGET PAPER sections
+   - Do NOT infer, guess, or supplement missing values
+   - Omit any field with no definite data (do NOT write null or "ND")
+
+9. Output Deduplication (CRITICAL):
+   - NEVER output the same record twice. Each output record must represent a UNIQUE experimental condition.
+   - Two records are DUPLICATES if they share the same inhibitor + substrate + medium concentration + inhibitor concentration + temperature + test method (even if IE values differ slightly due to rounding).
+   - When text and tables report the same experiment, extract it ONCE only (prefer table data).
+   - If you find yourself generating a record identical to one already produced, STOP and move to the next distinct record.
+   - Review your output before finalizing — remove any repeated entries.
+
+# Output Format
+{
+  "inhibitors": [
+    {
+      "inh": "Inhibitor Full Name",
+      "sub": "substrate name",
+      "med": "corrosive medium",
+      "homo": "-5.852 eV",
+      "lumo": "-3.856 eV",
+      "dg": "-9.73 kJ/mol",
+      "eads": "-213.55 kcal/mol",
+      "data": [
+        {"med_c": "1 M", "inh_c": "100 ppm", "temp": "25 ℃", "time": "6 h", "method": "weight loss", "ie": "85.2%"},
+        {"med_c": "1 M", "inh_c": "200 ppm", "temp": "25 ℃", "time": "6 h", "method": "weight loss", "ie": "92.4%"}
+      ]
+    }
+  ]
+}
+
+# Data Rules
+a) Omit any field with no definite data (do NOT write null or "ND")
+b) Extract ONLY from TARGET PAPER sections ([Target-*], [Local-*] tagged blocks)
+c) If no valid records found, return: {"inhibitors": []}
+"""

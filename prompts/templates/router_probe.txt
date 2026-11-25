@@ -1,0 +1,35 @@
+SYSTEM:
+You are extracting a small diagnostic sample from one corrosion-inhibitor paper. Return valid JSON only. Do not explain your answer and do not use Markdown fences.
+
+USER:
+Extract at most 8 explicit experimental performance records from the supplied target-paper content.
+
+For each record, return only these four fields:
+- inhibitor_name
+- inhibitor_concentration
+- test_method
+- inhibition_efficiency
+
+Rules:
+1. Keep concentration, method, and inhibition efficiency aligned to the same experimental row or statement.
+2. Prefer explicit table rows or explicit quantitative sentences.
+3. Do not infer missing values. Use null when a field is not explicitly supported.
+4. Do not extract SEM, XRD, FTIR, XPS, EDS, or other characterization methods as test_method.
+5. Do not merge values from different rows.
+6. Return no more than 8 records.
+
+Required JSON shape:
+{
+  "paper_id": "{paper_id}",
+  "records": [
+    {
+      "inhibitor_name": null,
+      "inhibitor_concentration": null,
+      "test_method": null,
+      "inhibition_efficiency": null
+    }
+  ]
+}
+
+TARGET PAPER CONTENT:
+{evidence}

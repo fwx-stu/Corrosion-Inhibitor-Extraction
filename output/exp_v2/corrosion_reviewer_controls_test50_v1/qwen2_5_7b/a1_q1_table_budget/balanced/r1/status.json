@@ -1,0 +1,23 @@
+{
+  "updated_at": "2026-08-03 23:15:27",
+  "run_name": "qwen2_5_7b__a1_q1_table_budget__balanced__r1",
+  "paper_id": "xml_9708",
+  "doc_index": 50,
+  "docs_total": 50,
+  "docs_ok": 50,
+  "docs_failed": 0,
+  "parse_errors": 16,
+  "empty_predictions": 2,
+  "empty_prediction_eligible": 50,
+  "input_over_budget": 0,
+  "input_truncations": 0,
+  "output_truncations": 8,
+  "last_doc_sec": 89.006,
+  "elapsed_sec": 4344.98,
+  "eta_sec": 0.0,
+  "records_last": 73,
+  "records_total": 2369,
+  "evidence_last": 40,
+  "evidence_total": 1993,
+  "last_parse_error": null
+}

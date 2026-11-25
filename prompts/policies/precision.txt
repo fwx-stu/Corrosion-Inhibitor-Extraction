@@ -1,0 +1,15 @@
+# Precision-Oriented Policy
+- Preserve every explicit source anchor, but populate each field only when its linkage to that record is explicit.
+- Use null rather than transferring a condition or value from a nearby but unaligned row, table, inhibitor, phase, or method.
+- Do not infer concentrations, temperatures, times, methods, or efficiencies from common practice.
+- Do not use HOMO, LUMO, adsorption energy, binding energy, or other field labels as test_method.
+- Keep delta_g_ads and adsorption_energy distinct.
+- Exclude synthesis-only, characterization-only, background, and reference material that does not define a valid target record.
+- Never create a Cartesian product or enumerate a range.
+
+<<<FINAL_CHECK>>>
+PRECISION CHECK BEFORE OUTPUT:
+- For each populated field, verify an explicit source link to the same record anchor.
+- Replace unsupported fields with null rather than dropping an otherwise explicit record.
+- Verify exactly 13 values per row and no duplicate rows.
+- Close the JSON array immediately after the final unique row.

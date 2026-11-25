@@ -1,0 +1,14 @@
+strategy,field,tp,fp,fn,pred_count,gold_count,precision,recall,f1,gold_null_count_matched,correct_null_count,null_accuracy
+qwen2_5_3b__q2_table_aware_rag__balanced__r1,inhibitor_name,160,384,510,544,670,0.29411764705882354,0.23880597014925373,0.2635914332784185,0,0,
+qwen2_5_3b__q2_table_aware_rag__balanced__r1,substrate,204,340,445,544,649,0.375,0.31432973805855163,0.3419949706621961,0,0,
+qwen2_5_3b__q2_table_aware_rag__balanced__r1,corrosive_medium,218,322,450,540,668,0.40370370370370373,0.3263473053892216,0.36092715231788086,0,0,
+qwen2_5_3b__q2_table_aware_rag__balanced__r1,medium_concentration,117,423,533,540,650,0.21666666666666667,0.18,0.19663865546218487,1,0,0.0
+qwen2_5_3b__q2_table_aware_rag__balanced__r1,inhibitor_concentration,135,405,505,540,640,0.25,0.2109375,0.2288135593220339,1,0,0.0
+qwen2_5_3b__q2_table_aware_rag__balanced__r1,temperature,81,459,402,540,483,0.15,0.16770186335403728,0.15835777126099707,43,0,0.0
+qwen2_5_3b__q2_table_aware_rag__balanced__r1,immersion_time,96,444,435,540,531,0.17777777777777778,0.1807909604519774,0.17927170868347336,49,0,0.0
+qwen2_5_3b__q2_table_aware_rag__balanced__r1,test_method,146,360,500,506,646,0.2885375494071146,0.2260061919504644,0.2534722222222222,0,0,
+qwen2_5_3b__q2_table_aware_rag__balanced__r1,inhibition_efficiency,98,345,463,443,561,0.22121896162528218,0.1746880570409982,0.19521912350597606,37,4,0.10810810810810811
+qwen2_5_3b__q2_table_aware_rag__balanced__r1,homo,55,138,221,193,276,0.2849740932642487,0.19927536231884058,0.2345415778251599,143,143,1.0
+qwen2_5_3b__q2_table_aware_rag__balanced__r1,lumo,55,138,221,193,276,0.2849740932642487,0.19927536231884058,0.2345415778251599,143,143,1.0
+qwen2_5_3b__q2_table_aware_rag__balanced__r1,delta_g_ads,0,24,300,24,300,0.0,0.0,0.0,129,129,1.0
+qwen2_5_3b__q2_table_aware_rag__balanced__r1,adsorption_energy,0,31,267,31,267,0.0,0.0,0.0,145,145,1.0

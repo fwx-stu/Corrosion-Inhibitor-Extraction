@@ -1,0 +1,23 @@
+{
+  "updated_at": "2026-07-15 20:06:56",
+  "run_name": "qwen2_5_7b__q2_table_aware_rag__balanced__r1",
+  "paper_id": "xml_9172",
+  "doc_index": 37,
+  "docs_total": 37,
+  "docs_ok": 37,
+  "docs_failed": 0,
+  "parse_errors": 6,
+  "empty_predictions": 3,
+  "empty_prediction_eligible": 37,
+  "input_over_budget": 0,
+  "input_truncations": 0,
+  "output_truncations": 3,
+  "last_doc_sec": 24.181,
+  "elapsed_sec": 1608.176,
+  "eta_sec": 0.0,
+  "records_last": 14,
+  "records_total": 885,
+  "evidence_last": 40,
+  "evidence_total": 1414,
+  "last_parse_error": null
+}

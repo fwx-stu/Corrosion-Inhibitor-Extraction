@@ -1,0 +1,99 @@
+"Please analyze the following content:\n{content}\n"
+"""
+As an expert in corrosion science literature processing, strictly follow the instructions below to extract information. Please output only in strict **JSON format**. Do not return Python code or redundant explanations.
+
+# Extraction Requirements
+1. Extract corrosion inhibition experimental records from the main text and tables of the article.
+2. Use a **grouped structure**: each inhibitor compound forms one group, shared properties are written once at the group level, and varying experimental conditions are listed as data points within the group.
+
+3. **Group-level fields** (properties of the inhibitor or the overall experiment setup — write once per group):
+   - inh: Inhibitor Name — exact name, prefer full name if both abbreviation and full name are given
+   - sub: Substrate — metal or material being tested
+   - med: Corrosive Medium — e.g., HCl, H2SO4, NaCl solution
+   - homo: HOMO energy from DFT/quantum chemistry, e.g., "-5.923 eV"
+   - lumo: LUMO energy from DFT/quantum chemistry, e.g., "-2.051 eV"
+   - dg: Gibbs free energy of adsorption (ΔG_ads), e.g., "-16.895 kJ/mol"
+   - eads: Adsorption energy from MD/DFT, e.g., "-180.763 kcal/mol"
+
+4. **Data-point fields** (varying experimental conditions — one entry per unique condition combination):
+   - med_c: Medium Concentration — e.g., "1 M", "0.5 mol/L", "3.5 wt.%"
+   - inh_c: Inhibitor Concentration — e.g., "100 ppm", "200 mg/L"
+   - temp: Temperature — e.g., "25 ℃", "298 K"
+   - time: Immersion Time — e.g., "6 h", "24 hours"
+   - method: Test Method — e.g., "weight loss", "EIS", "potentiodynamic polarization"
+   - ie: Inhibition Efficiency — e.g., "85%", "92.4%"
+
+5. Grouping Rules:
+   - Records sharing the same inhibitor + substrate + corrosive medium + quantum chemistry values MUST be merged into ONE group
+   - Each data point within a group represents one unique experimental condition combination
+   - If only one data point exists, still use the "data" array with one entry
+   - If the article studies multiple inhibitors, create one group per inhibitor
+
+6. Record Splitting Rules:
+   - Create separate data points when the article reports different inhibitor concentrations, temperatures, immersion times, test methods, or inhibition efficiencies
+   - When encountering discrete enumerated variables (e.g., testing at 10, 20, 50 ppm or 298, 303 K), you MUST split them into separate, independent data points. It is STRICTLY FORBIDDEN to use commas or the range symbol "~" to merge them into a single field
+   - Each data point must be internally consistent (all fields from the same experimental condition)
+
+7. Data Prioritization:
+   - Table data > Text description
+   - Explicit values > Ranges
+   - Experimental data > Review/discussion/background information
+   - Values directly linked to the current experiment > General statements
+
+8. Extraction Constraints:
+   - Only extract information explicitly stated in the article
+   - Do not infer, guess, or supplement missing values
+   - Do not confuse corrosive medium concentration with inhibitor concentration
+   - Do not confuse inhibition test methods with characterization techniques (SEM, XPS, FTIR, AFM) unless explicitly used as the evaluation method
+   - If a value is not found, omit the field entirely (do NOT write null or "ND")
+
+# Output Format
+Output must follow this strict JSON structure:
+{
+  "inhibitors": [
+    {
+      "inh": "Inhibitor Full Name",
+      "sub": "substrate name",
+      "med": "corrosive medium",
+      "homo": "-5.852 eV",
+      "lumo": "-3.856 eV",
+      "dg": "-9.73 kJ/mol",
+      "eads": "-213.55 kcal/mol",
+      "data": [
+        {"med_c": "1 M", "inh_c": "100 ppm", "temp": "25 ℃", "time": "6 h", "method": "weight loss", "ie": "85.2%"},
+        {"med_c": "1 M", "inh_c": "200 ppm", "temp": "25 ℃", "time": "6 h", "method": "weight loss", "ie": "92.4%"}
+      ]
+    },
+    {
+      "inh": "Another Inhibitor",
+      "sub": "mild steel",
+      "med": "HCl",
+      "data": [
+        {"med_c": "1 M", "inh_c": "50 ppm", "method": "EIS", "ie": "78.3%"}
+      ]
+    }
+  ]
+}
+
+# Data Rules
+a) Omit any field with no definite data (do NOT write null or "ND")
+b) Use "~" for ranges, e.g., "100~200 ppm"
+c) Keep units exactly as reported in the article
+d) Preserve the original chemical/material expression, e.g., "mild steel", "1 M HCl"
+e) If no valid data can be extracted, return: {"inhibitors": []}
+f) Output only valid JSON starting directly with {. No descriptions, labels, or explanations before or after the JSON.
+
+# Output Deduplication (CRITICAL)
+- NEVER output the same record twice. Each output record must represent a UNIQUE experimental condition.
+- Two records are DUPLICATES if they share the same inhibitor + substrate + medium concentration + inhibitor concentration + temperature + test method (even if IE values differ slightly due to rounding).
+- When text and tables report the same experiment, extract it ONCE only (prefer table data).
+- If you find yourself generating a record identical to one already produced, STOP and move to the next distinct record.
+- Review your output before finalizing — remove any repeated entries.
+
+# Exception Handling
+1. Resolve conflicting data using last-appearance priority
+2. Maintain table row-column alignment
+3. Omit fields with no data
+4. When one field varies across rows, split into separate data points
+5. If one sentence gives a shared condition for multiple rows, apply it only when linkage is explicit
+"""

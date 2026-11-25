@@ -1,0 +1,258 @@
+{
+  "config_fingerprint": "2b5cc4529b30c24c1eb7874534101f31756b7791382db2e28ebb324678a6f3d6",
+  "experiment_id": "corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6",
+  "dataset_name": "dev37",
+  "dataset_role": "dev",
+  "expected_paper_count": 37,
+  "model_key": "qwen2_5_7b",
+  "model_config": {
+    "display_name": "Qwen2.5-7B-Instruct",
+    "backend": "transformers",
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "local_path_env": "QWEN_7B_PATH",
+    "local_path_candidates": [
+      "../models/Qwen2.5-7B-Instruct",
+      "../models/Qwen/Qwen2.5-7B-Instruct",
+      "../models/Qwen/Qwen2___5-7B-Instruct",
+      "../models/models--Qwen--Qwen2.5-7B-Instruct"
+    ],
+    "max_context_chars": 48000,
+    "generation": {
+      "max_new_tokens": 8192,
+      "max_input_tokens": 23000,
+      "temperature": 0.0,
+      "top_p": null,
+      "do_sample": false,
+      "json_repeat_guard": true,
+      "json_repeat_guard_min_rows": 6,
+      "json_repeat_guard_max_cycle": 4,
+      "json_repeat_guard_check_interval": 16
+    },
+    "resolved_path": "${WORKSPACE}/models/Qwen/Qwen2___5-7B-Instruct",
+    "models_dir": "${WORKSPACE}/models"
+  },
+  "generation_config": {
+    "max_new_tokens": 8192,
+    "temperature": 0.0,
+    "top_p": null,
+    "seed": 1,
+    "max_input_tokens": 23000,
+    "do_sample": false,
+    "json_repeat_guard": true,
+    "json_repeat_guard_min_rows": 6,
+    "json_repeat_guard_max_cycle": 4,
+    "json_repeat_guard_check_interval": 16
+  },
+  "runtime_environment": {
+    "python": "3.10.20",
+    "platform": "Linux-6.8.0-110-generic-x86_64-with-glibc2.39",
+    "torch": "2.11.0+cu128",
+    "transformers": "5.1.0",
+    "sentence_transformers": "5.5.0",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "cuda_available": true,
+    "cuda_version": "12.8",
+    "cudnn_version": 91900,
+    "gpu_name": "NVIDIA A800-SXM4-80GB"
+  },
+  "model_artifacts": {
+    "generation_model": {
+      "path": "${WORKSPACE}/models/Qwen/Qwen2___5-7B-Instruct",
+      "exists": true,
+      "small_file_sha256": {
+        "config.json": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c",
+        "configuration.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "generation_config.json": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f",
+        "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+        "model.safetensors.index.json": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028",
+        "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+        "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      "weight_manifest": [
+        {
+          "name": "model-00001-of-00004.safetensors",
+          "size": 3945441440
+        },
+        {
+          "name": "model-00002-of-00004.safetensors",
+          "size": 3864726352
+        },
+        {
+          "name": "model-00003-of-00004.safetensors",
+          "size": 3864726424
+        },
+        {
+          "name": "model-00004-of-00004.safetensors",
+          "size": 3556377672
+        }
+      ],
+      "directory_signature": "deeff14954bcc5fd8702eb6d8c430baed53327e84ed09fa4610a3b61daee4bf4",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "source": "resolved_path"
+    },
+    "embedding_model": {
+      "path": "${WORKSPACE}/models/BAAI/bge-m3",
+      "exists": true,
+      "small_file_sha256": {
+        "1_Pooling/config.json": "e54c164a07274f2eb45bb724f54a79d1efcc90c41573887cd9a29aeee0597352",
+        "config.json": "26159e7ad065073448460117eb24b7a4572f6f4e78eadff65dc0a11c052449fa",
+        "config_sentence_transformers.json": "1eef72430e7194a1e59680e635aed81ffa083f05668dbc5bb1c56c04c0999c38",
+        "configuration.json": "007c616ed9187f4f3d6096ed2d55cece33c3f48866dbd7bc6afefcb9645a37c1",
+        "modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+        "onnx/config.json": "f24afd5de914fba8c668426c43d208a1a54022500c63b2c160be20891686fce8",
+        "onnx/sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+        "onnx/special_tokens_map.json": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+        "onnx/tokenizer.json": "6710678b12670bc442b99edc952c4d996ae309a7020c1fa0096dd245c2faf790",
+        "onnx/tokenizer_config.json": "7e4c1cc848840aeccdd763458c18dd525eb0f795c992e00ebe9c28554e7db2d4",
+        "sentence_bert_config.json": "eb9b44b13c0f52a3b3685c3b1cbdea1ba8b04bea123b98f61610048940776eb1",
+        "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+        "special_tokens_map.json": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+        "tokenizer.json": "21106b6d7dab2952c1d496fb21d5dc9db75c28ed361a05f5020bbba27810dd08",
+        "tokenizer_config.json": "a62b2b6784f990259fddef5f16388693a8043be4f69179e6a5257eeb3f9abac4"
+      },
+      "weight_manifest": [
+        {
+          "name": "colbert_linear.pt",
+          "size": 2100674
+        },
+        {
+          "name": "pytorch_model.bin",
+          "size": 2271145830
+        },
+        {
+          "name": "sparse_linear.pt",
+          "size": 3516
+        }
+      ],
+      "directory_signature": "8818d19f53877338136e12c69c906f5e396ddf478fa49b4fbc80e57e474675cb"
+    },
+    "reranker_model": {
+      "path": "${WORKSPACE}/models/BAAI/bge-reranker-v2-m3",
+      "exists": true,
+      "small_file_sha256": {
+        "config.json": "13dcd6c31d9fec9d1d8e158702072f62d7fa7d312a64b9fe057bec9a08cfe41a",
+        "configuration.json": "90dccac936e44dcb4567017a5dbb807b583604032fd53bfe2372a15881ed47e1",
+        "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+        "special_tokens_map.json": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+        "tokenizer.json": "69564b696052886ed0ac63fa393e928384e0f8caada38c1f4864a9bfbf379c15",
+        "tokenizer_config.json": "7e4c1cc848840aeccdd763458c18dd525eb0f795c992e00ebe9c28554e7db2d4"
+      },
+      "weight_manifest": [
+        {
+          "name": "model.safetensors",
+          "size": 2271071852
+        }
+      ],
+      "directory_signature": "fda6d3ecfc947342f9e86c79ebd320ec0f481e2a7bba9e865ad1ab010a776f55"
+    }
+  },
+  "retrieval_config": {
+    "backend": "legacy_exact",
+    "chunking_backend": "legacy_exact",
+    "scoring_protocol": "legacy_exact",
+    "embedding_backend": "local",
+    "embedding_model": "../models/BAAI/bge-m3",
+    "reranker_model": "../models/BAAI/bge-reranker-v2-m3",
+    "device": "cuda:0",
+    "strict_loading": true,
+    "enable_persistent_evidence_cache": true,
+    "chunk_size": 1000,
+    "chunk_overlap": 50,
+    "field_retrieval_top_k": 20,
+    "retrieval_top_k": 120,
+    "rerank_top_n": 80,
+    "field_rerank_top_n": 20,
+    "rerank_rrf_k": 60,
+    "retrieval_candidate_max_chunks": 80,
+    "small_model_max_chunks": 80,
+    "max_final_chunks": 40,
+    "max_window_chunks": 8,
+    "window_candidate_max_chunks": 16,
+    "window_score_decay": 0.85,
+    "window_size": 1,
+    "enable_reranker": true,
+    "reranker_backend": "cross_encoder",
+    "bm25_weight": 0.25,
+    "table_extra_chunks": 16,
+    "max_evidence_chars": 0,
+    "enable_grounding_filter": false,
+    "enable_row_level_table_evidence": false,
+    "merge_row_table_candidates": false,
+    "enable_debug_trace": true,
+    "debug_trace_level": "basic",
+    "_persistent_cache_root": "${WORKSPACE}/8b（opt-final-v6）/cache/retrieval/dev37"
+  },
+  "strategy_config": {
+    "prompt_template": "templates/q1_rag",
+    "include_field_groups": [
+      "performance",
+      "conditions",
+      "quantum",
+      "adsorption"
+    ],
+    "dedup_mode": "performance_with_time",
+    "max_final_chunks": 40,
+    "max_window_chunks": 8,
+    "input_safety_margin_tokens": 32,
+    "enable_grounding_filter": false
+  },
+  "strategy": "q1_budgeted_rag",
+  "prompt_variant": "recall",
+  "seed": 1,
+  "md_dir": "${WORKSPACE}/8b（opt-final-v6）input/dev37/md",
+  "gold_path": "${WORKSPACE}/8b（opt-final-v6）input/dev37/gold/dev37.jsonl",
+  "run_dir": "${WORKSPACE}/8b（opt-final-v6）output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q1_budgeted_rag/recall/r1",
+  "docs_total": 37,
+  "docs_resumed": 0,
+  "docs_executed_this_process": 37,
+  "docs_ok": 37,
+  "docs_failed": 0,
+  "document_coverage": 1.0,
+  "document_failure_rate": 0.0,
+  "structural_complete": true,
+  "parse_errors": 9,
+  "empty_predictions": 2,
+  "empty_prediction_eligible": 37,
+  "input_over_budget": 0,
+  "input_truncations": 0,
+  "output_truncations": 5,
+  "quality_gate_config": {
+    "max_parse_error_rate": 0.05,
+    "max_empty_prediction_rate": 0.05,
+    "max_input_over_budget": 0,
+    "max_input_truncations": 0,
+    "max_output_truncation_rate": 0.0,
+    "max_document_failure_rate": 0.0
+  },
+  "quality_metrics": {
+    "document_failure_count": 0,
+    "document_failure_rate": 0.0,
+    "document_coverage": 1.0,
+    "structural_complete": true,
+    "parse_error_count": 9,
+    "parse_error_rate": 0.243243,
+    "empty_prediction_count": 2,
+    "empty_prediction_eligible_count": 37,
+    "empty_prediction_rate": 0.054054,
+    "input_over_budget_count": 0,
+    "input_truncation_count": 0,
+    "output_truncation_count": 5,
+    "output_truncation_rate": 0.135135
+  },
+  "quality_checks": {
+    "max_document_failure_rate": true,
+    "max_parse_error_rate": false,
+    "max_empty_prediction_rate": false,
+    "max_input_over_budget": true,
+    "max_input_truncations": true,
+    "max_output_truncation_rate": false
+  },
+  "quality_gate_pass": false,
+  "records_total": 752,
+  "evidence_total": 1395,
+  "avg_doc_sec_this_process": 49.007,
+  "elapsed_sec": 1813.262,
+  "complete": true
+}

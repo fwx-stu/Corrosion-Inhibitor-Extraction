@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+.env.*
+!.env.example
+models/
+cache/
+reproduced/
+input/*/md/*
+!input/*/md/.gitkeep
+strong_llm/input/
+strong_llm/output/
+*.log
+*.tar.gz

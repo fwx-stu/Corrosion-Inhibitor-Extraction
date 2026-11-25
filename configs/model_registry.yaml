@@ -1,0 +1,86 @@
+models:
+  qwen2_5_1_5b:
+    display_name: Qwen2.5-1.5B-Instruct
+    backend: transformers
+    model_id: Qwen/Qwen2.5-1.5B-Instruct
+    local_path_env: QWEN_1_5B_PATH
+    local_path_candidates:
+      - ${MODELS_DIR}/Qwen2.5-1.5B-Instruct
+      - ${MODELS_DIR}/Qwen/Qwen2.5-1.5B-Instruct
+      - ${MODELS_DIR}/Qwen/Qwen2___5-1___5B-Instruct
+      - ${MODELS_DIR}/models--Qwen--Qwen2.5-1.5B-Instruct
+    max_context_chars: 28000
+    generation:
+      max_new_tokens: 8192
+      max_input_tokens: 23000
+      temperature: 0.05
+      top_p: 1.0
+      do_sample: true
+
+  qwen2_5_3b:
+    display_name: Qwen2.5-3B-Instruct
+    backend: transformers
+    model_id: Qwen/Qwen2.5-3B-Instruct
+    local_path_env: QWEN_3B_PATH
+    local_path_candidates:
+      - ${MODELS_DIR}/Qwen2.5-3B-Instruct
+      - ${MODELS_DIR}/Qwen/Qwen2.5-3B-Instruct
+      - ${MODELS_DIR}/Qwen/Qwen2___5-3B-Instruct
+      - ${MODELS_DIR}/models--Qwen--Qwen2.5-3B-Instruct
+    max_context_chars: 36000
+    generation:
+      max_new_tokens: 8192
+      max_input_tokens: 23000
+      temperature: 0.05
+      top_p: 1.0
+      do_sample: true
+
+  qwen2_5_7b:
+    display_name: Qwen2.5-7B-Instruct
+    backend: transformers
+    model_id: Qwen/Qwen2.5-7B-Instruct
+    local_path_env: QWEN_7B_PATH
+    local_path_candidates:
+      - ${MODELS_DIR}/Qwen2.5-7B-Instruct
+      - ${MODELS_DIR}/Qwen/Qwen2.5-7B-Instruct
+      - ${MODELS_DIR}/Qwen/Qwen2___5-7B-Instruct
+      - ${MODELS_DIR}/models--Qwen--Qwen2.5-7B-Instruct
+    max_context_chars: 48000
+    generation:
+      max_new_tokens: 8192
+      max_input_tokens: 23000
+      temperature: 0.05
+      top_p: 1.0
+      do_sample: true
+
+  qwen2_5_14b:
+    display_name: Qwen2.5-14B-Instruct
+    backend: transformers
+    model_id: Qwen/Qwen2.5-14B-Instruct
+    local_path_env: QWEN_14B_PATH
+    local_path_candidates:
+      - ${MODELS_DIR}/Qwen2.5-14B-Instruct
+      - ${MODELS_DIR}/Qwen/Qwen2.5-14B-Instruct
+      - ${MODELS_DIR}/Qwen/Qwen2___5-14B-Instruct
+      - ${MODELS_DIR}/models--Qwen--Qwen2.5-14B-Instruct
+    max_context_chars: 64000
+    generation:
+      max_new_tokens: 8192
+      max_input_tokens: 23000
+      temperature: 0.05
+      top_p: 1.0
+      do_sample: true
+
+  glm_4_plus:
+    display_name: GLM-4-Plus
+    backend: openai_compatible
+    model_id: glm-4-plus
+    base_url_env: GLM_BASE_URL
+    api_key_env: GLM_API_KEY
+    max_context_chars: 64000
+    generation:
+      max_new_tokens: 8192
+      max_input_tokens: 23000
+      temperature: 0.05
+      top_p: 1.0
+      do_sample: true

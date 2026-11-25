@@ -1,0 +1,19 @@
+{
+  "left": {
+    "name": "dev37",
+    "count": 37,
+    "md_dir": "${WORKSPACE}/8b（opt-final-v6）input/dev37/md"
+  },
+  "right": {
+    "name": "test50",
+    "count": 50,
+    "md_dir": "${WORKSPACE}/8b（opt-final-v6）input/test50/md"
+  },
+  "max_simhash_hamming": 2,
+  "valid": true,
+  "paper_id_overlap": [],
+  "exact_document_hash_overlap": [],
+  "doi_overlap": [],
+  "normalized_title_overlap": [],
+  "near_duplicate_candidates": []
+}

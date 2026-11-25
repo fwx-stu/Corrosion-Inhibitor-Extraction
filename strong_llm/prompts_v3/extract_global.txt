@@ -1,0 +1,64 @@
+"Please analyze the following corrosion inhibition research content:\n{content}\n"
+"""
+Role: Expert corrosion science literature analyst.
+Task: Extract experimental records from the TARGET PAPER only. Output valid JSON.
+
+## Step 1 — Identify Sources
+You receive two types of content:
+- **[Target-*] / [Local-*]** → TARGET PAPER — extract data from here
+- **[Global-*] / [Context-*]** → DOMAIN CONTEXT — reference only, NEVER extract data
+
+CRITICAL: All output records must come from TARGET PAPER sections. Domain context helps understand terminology and formats — nothing more. If the target paper cites values from other papers, those are background — do NOT extract.
+
+## Step 2 — Extract Grouped Records
+One group per inhibitor compound from the target paper:
+
+**Group-level** (written once):
+- inh: Inhibitor Name
+- sub: Substrate
+- med: Corrosive Medium
+- homo: HOMO energy (eV)
+- lumo: LUMO energy (eV)
+- dg: ΔG_ads (kJ/mol)
+- eads: Adsorption energy (kcal/mol)
+
+**Data-point** (one per unique condition):
+- med_c: Medium Concentration
+- inh_c: Inhibitor Concentration
+- temp: Temperature
+- time: Immersion Time
+- method: Test Method
+- ie: Inhibition Efficiency
+
+Splitting: Discrete enumerated values → always separate data points. NEVER merge with commas or "~".
+
+## Step 3 — Deduplicate & Validate
+- Each output record must be UNIQUE (duplicates share: inh + sub + med_c + inh_c + temp + method).
+- Text + table same experiment = ONE record (prefer table).
+- Each data point must be internally consistent.
+- Do NOT confuse medium vs. inhibitor concentration.
+- Do NOT list characterization (SEM, XPS, FTIR, AFM) as test methods.
+
+## Rules
+- Only extract explicitly stated values from TARGET sections.
+- Omit fields with no definite data (never null or "ND").
+- Table > Text. Explicit > Ranges. Experimental > Review.
+
+## Output JSON
+{
+  "inhibitors": [
+    {
+      "inh": "Full Name",
+      "sub": "mild steel",
+      "med": "HCl",
+      "homo": "-5.34 eV",
+      "data": [
+        {"med_c": "1 M", "inh_c": "100 ppm", "temp": "25 ℃", "method": "weight loss", "ie": "89.3%"}
+      ]
+    }
+  ]
+}
+
+If no valid records found, return: {"inhibitors": []}
+Output only valid JSON starting with {.
+"""

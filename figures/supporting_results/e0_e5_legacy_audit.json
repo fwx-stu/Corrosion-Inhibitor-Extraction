@@ -1,0 +1,41 @@
+{
+  "source_archive": "output.zip",
+  "source_archive_sha256": "b46e03f9fbbafbe50449f326efa218203e80940c5919ae2e103246e31a5a86fa",
+  "original_code_archive": "large-model(1).zip",
+  "original_config_sha256": "15db13c177253eacb4739630582f1a473aa6fe5ecdccb8e9fe7ae6fa76ff4283",
+  "original_config_record_match_threshold": 0.6,
+  "original_evaluator_default_threshold": 0.55,
+  "legacy_threshold_used_to_reproduce_saved_summaries": 0.6,
+  "new_frozen_threshold": 0.38,
+  "strategy_mapping_original_to_manuscript": {
+    "E0": "E0",
+    "E1": "E1",
+    "E3": "E2",
+    "E4": "E3",
+    "E5": "E4",
+    "E6": "E5"
+  },
+  "paper_count_per_run": 37,
+  "gold_record_count": 670,
+  "run_count": 54,
+  "old_summary_count": 9,
+  "parity_checks_per_run": 11,
+  "all_legacy_summary_parity_checks_passed": true,
+  "maximum_absolute_parity_difference": 1.1102230246251565e-16,
+  "legacy_evaluator_sha256": "db2f069f492af40ccee9bd63df5ceb0ce39e7ee6ec00ae9e5bc04c3c2cdf46bb",
+  "current_evaluator_sha256": "1bcbd9c106490a662bd380a8579e05ab676f56cf45b9f7dadcc773d5ac5ce4a9",
+  "ast_different_top_level_functions": [
+    "_dec_to_str",
+    "evaluate_strategy"
+  ],
+  "gold_sha256": "67076e06bae2c13a44fd2fb2eb09cf07e94b13c8f9b23186f18d12012cfa6455",
+  "original_gold_sha256": "67076e06bae2c13a44fd2fb2eb09cf07e94b13c8f9b23186f18d12012cfa6455",
+  "calibration_frozen_sha256": "9c4bdaee47e2fbf2b9785234543aac858dd3a645ac4febba14ebc3d784632f55",
+  "notes": [
+    "The original config threshold 0.60 overrides the evaluator default 0.55.",
+    "At 0.60 the current evaluator reproduces all 54 original run summaries within 1e-10.",
+    "The only top-level function AST changes are Decimal formatting protection and extra per-paper Null count output.",
+    "No original predictions, similarity weights, or record-matching logic were modified; no inference was performed.",
+    "Raw config is not bundled; its threshold assignment, file hash, and result parity provide the audit record."
+  ]
+}

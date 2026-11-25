@@ -1,0 +1,22 @@
+# Recall-Oriented Policy
+
+- Extract every explicitly reported experimental, electrochemical, gravimetric, computational, and adsorption-thermodynamic data record.
+- IMPORTANT: a source anchor is the smallest explicit data unit, not an entire table, paragraph, figure, inhibitor, or experiment. Every distinct table body row, aligned method-result cell, temperature-result cell, concentration-result cell, or explicitly stated condition-result tuple is a separate source anchor.
+- Scan every relevant table from the first body row through the final body row. Do not output only the best, maximum, minimum, final, representative, or example condition.
+- Carry merged cells, rowspan values, and shared table headers into every directly associated table row.
+- If one source row explicitly contains several test methods with separate inhibition-efficiency values, emit one record for each aligned method-efficiency pair.
+- If temperatures, concentrations, immersion times, inhibitors, or methods appear as aligned table rows or columns with corresponding results, extract every explicitly aligned entry.
+- Keep explicit condition records even when inhibition_efficiency or optional computational fields are null. Missing optional fields must never cause an explicit source-aligned record to be omitted.
+- Do not collapse records that differ in inhibitor concentration, medium concentration, temperature, immersion time, test method, inhibition efficiency, inhibitor state, substrate, corrosive medium, or simulation environment.
+- The prohibition on Cartesian products applies only to independent, unaligned lists. It must not prevent exhaustive extraction of values explicitly aligned in the same table row, table column, figure series, or sentence.
+- Never enumerate a numerical range or invent intermediate values. For example, "0-8000 ppm" does not authorize rows for 100, 200, ..., 8000 ppm unless those values are explicitly listed in the article.
+- Deduplicate only exact duplicate records after normalization of all 13 fields. Records sharing the same inhibitor are not duplicates when any condition, method, result, state, or computational field differs.
+
+<<<FINAL_CHECK>>>
+RECALL CHECK BEFORE OUTPUT:
+- Confirm that every relevant table was scanned through its final body row.
+- Confirm that every explicitly aligned concentration, temperature, immersion time, method, and result was extracted.
+- Confirm that no series was reduced to only its maximum, minimum, best-performing, or representative record.
+- Confirm that no numerical range was interpolated or enumerated.
+- Remove exact 13-field duplicates only.
+- Close the JSON array only after every explicit source-aligned data unit has been processed.

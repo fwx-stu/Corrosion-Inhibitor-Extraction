@@ -1,0 +1,126 @@
+experiment_id: corrosion_q0q1q2_test50_balanced_opt_final_v6
+protocol_version: 8b-opt-final-v6-test50-balanced-cpu-retrieval-14b
+project_root: .
+dataset_name: test50
+dataset_role: test
+expected_paper_count: 50
+input:
+  md_dir: input/test50/md
+  gold_path: input/test50/gold/test50.jsonl
+output_root: output/exp_v2
+models:
+- qwen2_5_14b
+strategies:
+- q0_safe_full
+- q1_budgeted_rag
+- q2_table_aware_rag
+prompt_variants:
+- balanced
+repeat_seeds:
+- 1
+run:
+  force: false
+  limit: null
+  paper_ids: null
+  stop_on_error: false
+  fail_on_quality_gate: false
+generation:
+  max_new_tokens: 8192
+  max_input_tokens: 23000
+  temperature: 0.0
+  top_p: null
+  do_sample: false
+  json_repeat_guard: true
+  json_repeat_guard_min_rows: 6
+  json_repeat_guard_max_cycle: 4
+  json_repeat_guard_check_interval: 16
+retrieval:
+  backend: legacy_exact
+  chunking_backend: legacy_exact
+  scoring_protocol: legacy_exact
+  embedding_backend: ${EMBEDDING_BACKEND:-local}
+  embedding_model: ${EMBEDDING_MODEL:-}
+  reranker_model: ${RERANKER_MODEL:-}
+  device: cpu
+  strict_loading: true
+  enable_persistent_evidence_cache: true
+  chunk_size: 1000
+  chunk_overlap: 50
+  field_retrieval_top_k: 20
+  retrieval_top_k: 120
+  rerank_top_n: 80
+  field_rerank_top_n: 20
+  rerank_rrf_k: 60
+  retrieval_candidate_max_chunks: 80
+  small_model_max_chunks: 80
+  max_final_chunks: 40
+  max_window_chunks: 8
+  window_candidate_max_chunks: 16
+  window_score_decay: 0.85
+  window_size: 1
+  enable_reranker: true
+  reranker_backend: cross_encoder
+  bm25_weight: 0.25
+  table_extra_chunks: 16
+  max_evidence_chars: 0
+  enable_grounding_filter: false
+  enable_row_level_table_evidence: false
+  merge_row_table_candidates: false
+  enable_debug_trace: true
+  debug_trace_level: basic
+strategy_params:
+  q0_safe_full:
+    prompt_template: templates/q0_full
+    dedup_mode: performance_with_time
+    enable_grounding_filter: false
+    input_safety_margin_tokens: 32
+  q1_budgeted_rag:
+    prompt_template: templates/q1_rag
+    include_field_groups:
+    - performance
+    - conditions
+    - quantum
+    - adsorption
+    dedup_mode: performance_with_time
+    max_final_chunks: 40
+    max_window_chunks: 8
+    input_safety_margin_tokens: 32
+    enable_grounding_filter: false
+  q2_table_aware_rag:
+    prompt_template: templates/q1_rag
+    include_field_groups:
+    - performance
+    - conditions
+    - quantum
+    - adsorption
+    dedup_mode: performance_with_time
+    max_final_chunks: 40
+    max_window_chunks: 8
+    input_safety_margin_tokens: 32
+    max_table_fragment_tokens: 3500
+    condition_anchor_quota: 4
+    enable_grounding_filter: false
+quality_gate:
+  max_parse_error_rate: 0.05
+  max_empty_prediction_rate: 0.05
+  max_input_over_budget: 0
+  max_input_truncations: 0
+  max_output_truncation_rate: 0.0
+  max_document_failure_rate: 0.0
+evaluation:
+  legacy_evaluate: true
+  docs_dir: input/test50/md
+  bootstrap_iterations: 10000
+  permutation_iterations: 10000
+  bootstrap_seed: 20260710
+  significance_alpha: 0.05
+  multiple_comparison: holm
+  composite_score:
+    enabled: true
+    method: weighted_arithmetic_mean
+    weights:
+      field_micro_f1: 0.3333333333333333
+      record_f1: 0.3333333333333333
+      null_accuracy: 0.3333333333333334
+output_protocol: compact_rows_v1
+formal_require_local_artifacts: true

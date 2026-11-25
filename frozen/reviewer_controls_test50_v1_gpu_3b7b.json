@@ -1,0 +1,308 @@
+{
+  "schema": "8b-opt-protocol-manifest-v6",
+  "experiment_id": "corrosion_reviewer_controls_test50_v1",
+  "dataset_name": "test50",
+  "dataset_role": "test",
+  "config_path": "configs/experiment_reviewer_controls_test50_v1_gpu_3b7b.yaml",
+  "config_sha256": "8a7f8020367ebbe87a5f8078a8bfc15cbdf20f26d527486b2eaeab4c0588d436",
+  "fields_sha256": "fc54f3c90dc4efb7b8f8b9c85c88095fa2e286cb2a5005e729daa37bcb701a36",
+  "model_registry_sha256": "34fd9d23474ad328086eec76915c56f2c2961d62e89e1887d30a52c38da3a864",
+  "source_tree_sha256": "dc12518825867f777bcd4d49094c403f746a6e784389a34c4dcfbba0363c2468",
+  "prompt_tree_sha256": "9e5e8277abf9a85a7c20dddba5a53045c1a25a4f7b944e8f15f58415b533df08",
+  "strategy_auxiliary_sha256": {
+    "b0_uniform_token_matched": {
+      "frozen/token_budgets_test50_q1q2_v6.json": "f0075b9545b699b81a3eff515be884b67d58a503dd6b3f9eb532f506a594dede"
+    },
+    "b1_section_aware_token_matched": {
+      "frozen/token_budgets_test50_q1q2_v6.json": "f0075b9545b699b81a3eff515be884b67d58a503dd6b3f9eb532f506a594dede"
+    },
+    "a1_q1_table_budget": {},
+    "a2_q1_condition_anchors": {}
+  },
+  "script_sha256": "600024a337af3327d5ff8fb0a99d6f7dd2c6713fc49c217465037a63cde13476",
+  "evaluator_sha256": "1bcbd9c106490a662bd380a8579e05ab676f56cf45b9f7dadcc773d5ac5ce4a9",
+  "requirements_sha256": "c6ebe1dfc98b0788804bc484959dee89cd44e7e854eddadeaff8000114d8503f",
+  "pip_freeze_sha256": "da9e8f47d4951b5f691f25430c7d6ba84ad681a586acc28b2735d39a617916cb",
+  "environment_lock_sha256": "c4660f220877c91c6aebd25e4afbb63bbe4635f4dccd21c0633a088d7052abcb",
+  "dataset_fingerprint_path": "input/test50/dataset_fingerprint.json",
+  "dataset_fingerprint_sha256": "2b7577cbffa509fdeaae532b87e2ff602df5af92f09c2fb41621df7637df1435",
+  "gold_sha256": "be0879b6d168e0a46fa423a67a21a7d8aad026bb7e09e7ce92a38cb21f33e4b4",
+  "paper_sha256": {
+    "pdf_1230.md": "0c16b38dff3c34ea45c5e63e4e48b88adfcf50c6a073c2fa5b877330c75c3309",
+    "pdf_1276.md": "ff2fc81e78ef07ce495815d9eac9d1a0f5fe5fcbc5bdd93a9973e1806b6edcaf",
+    "pdf_1278.md": "cbcf1d6fe72e3809968e295281a6ab491b539776972efb53470f5907bfcdb6b9",
+    "pdf_1309.md": "074887ba78eb79c77d900a18eb90536f4e05afdcf7d3e09ba5cbae1369c0975e",
+    "pdf_1641.md": "e58469c06729f18a1b209310c3054afe11f9b4a23a41212da67d7637e13b749b",
+    "pdf_1894.md": "58b139b31705cf7d37878af5452050f02ee65b117061ad7af1a8e5d06162d5c3",
+    "pdf_1934.md": "d03da693045b2f29fb1374b95047c6aa136d8aa0073fcbad00682851c10fe2a1",
+    "pdf_1997.md": "4a6fa19a8503bb84518d08edde2cd71163d03938efea6da8abf653dc2a45326e",
+    "pdf_2053.md": "b3740f8c2f97856e06031b46faeae65c31a45b15d8699e11127351f2da3840da",
+    "pdf_2075.md": "77ac49fce2dbd27537a1e94787f7f6dd4c2e8576da2c645ce87bc2ec4ca7dda9",
+    "pdf_2152.md": "5dc3f1fc5bd45c7e9a9505fea219b40c234506f9cd373ae4e6aabde3ff1034e6",
+    "pdf_2182.md": "5f658f6f5e796ac3a4068330796cbd174e96691025d8dc68934b3bfe64da0750",
+    "pdf_2424.md": "f331af8572105407c2165b09424b436ca2f6ccfd32960cdba734fab5400a1401",
+    "pdf_2466.md": "a60d08a1db8da152e95a9bd1c7259d9701b0fba5b25095931340aa4222b63d71",
+    "pdf_629.md": "918208cb75ce8ec5083dd66a4db644ac582f7f8e5998662f59b002a1d0ecd26f",
+    "pdf_679.md": "f18b1259b229fc0b22c0c4e76dd0f4c070b29abb0dfb79c7ef4de034044e284d",
+    "pdf_841.md": "26176f3a41a679991e8407884e7fb17d3a9f0aa0e67a344678b47fe440f76b9d",
+    "pdf_848.md": "fabc670b969fbe59a29aea87a1bb2c121ca5a5967c30156791980e914683ff4c",
+    "pdf_962.md": "9fb4f361129ce52366a5241bee9526d217807e6434770daef9ead1c830663c5e",
+    "pdf_986.md": "1f97c58f25a682b37e6f56aeb03d931360ce9dd9dc60e38bc286c6b400cf9aa6",
+    "xml_15.md": "756c317a02ad26b153f753d3f7179d1b24a9357e0ed39fe0cbe56c4ddb216a72",
+    "xml_1693.md": "377022b4c1e5716d052ec59550cba5a994003e5981939346b71789f19ed79df3",
+    "xml_1777.md": "27aac6fec2b903db0b7d009b87897a080a1e86e3368f35ca59ea42d54f68bb49",
+    "xml_181.md": "79ea787c18ca2b97ffe93656a2fa5aad48552637b5d6baced1f8e0d004c9d600",
+    "xml_2055.md": "209c677c7e9f28b8c1bed1b8e70916396035095550d2c568b8b3c1fc177c9481",
+    "xml_2059.md": "bf39c0c09329c3a0114c7822cc86f7010f2dc14d9945cc96f93db653d3e2ff7a",
+    "xml_2069.md": "6c7a6be55463674a67397f2cddf5c29f6e7f6c8bd8c459c326e85f053d4ec098",
+    "xml_2101.md": "68413f97e1fcf5d1c23dd84a0054441914775fef6b77bc22afcf1f2d53aec431",
+    "xml_2201.md": "f8e187587eb2df317743e4ac178fae384fc08095b391ad2603d7b64aa08b5838",
+    "xml_2326.md": "b299c2e44c0c9266f93e65a768c69510f1bcffa84d45a8f0731fb150eed56040",
+    "xml_2751.md": "e4d51ac9ed74a769d79a0af825fcbab17ddac70e92570211069daf11317f2cf3",
+    "xml_2860.md": "0da28950a4fc65aa6412cc4528b529a2606482a18fddb06dccde12f7e2e0feea",
+    "xml_2906.md": "dcefa7bac0f09655d3e63456d9a3bffbc38b6143da820bcffa7f8d797a58e0e8",
+    "xml_3086.md": "35157a67ad001416a4148761a3038270e0d773ff338ca454d00895f5dff16024",
+    "xml_3424.md": "88080ff7a3f12575521de11931c196a639c2ed1ed0b8ae333952939968023cfa",
+    "xml_3537.md": "3b757fe1a02b48e3485e78e792cba28f21e6c19033911b6e10466d8411aa2f79",
+    "xml_3611.md": "1b8fbda0710dda4a03c5feea2b02053583b8d0e04afe0536d70e8fd6301bcc51",
+    "xml_3640.md": "6628cc0a334d254f61407cabf9ccd463b1b8092a37ce4bf22724f6e847c4bfca",
+    "xml_3693.md": "022e3f4a4bcb659fbc88d7d707db54a806e461da7ad0d19509f3e4a465462c17",
+    "xml_3796.md": "51f60bc5720b442e87a63059cb23f202879e12f55e56976da5cdc5edb0dd7e94",
+    "xml_5509.md": "99392809cdd31d953ce91eca4d8c5167d1bc5e3589aad4c3a96243ec64fc4a78",
+    "xml_7077.md": "d8c972de09f179a213ecf3caa3026d066300aefa5b080cef8be78476e938ddef",
+    "xml_7624.md": "a134274fd19264f54c172cc66c96ed02228eee17024689a84b1099f1f1bb6dcb",
+    "xml_8311.md": "964e6300dc7ef37084c80b80f514fc811c3147d7e936d0775f1e49b857f0ff9f",
+    "xml_8715.md": "625d2c0765a2c01333126738065bc4f359a30dd6deb1af68783862f72e163f88",
+    "xml_8737.md": "d8d8cc568a84b99fedcef6f5d11563bd68a7c6ec49f4f5b71adfdbdfcf3dc89b",
+    "xml_8743.md": "9de45bf4f9fda8a9baefc4e7dbea47b0972f57e43834a762836c5fdf6cd1696b",
+    "xml_8807.md": "d0faba8b386e5a1383c518ffed0596095b649c5c923def39eef30589f8976495",
+    "xml_8991.md": "5c3c06f4e90a45fcf0b0540f0a2ebd0d75b9ba746d4c951fbab5fce5f4fcf138",
+    "xml_9708.md": "2dd632889e5690e89e9df397c0a6eed5a2b884dad2216daa276401fc1759d34a"
+  },
+  "models": {
+    "qwen2_5_3b": {
+      "config": {
+        "display_name": "Qwen2.5-3B-Instruct",
+        "backend": "transformers",
+        "model_id": "Qwen/Qwen2.5-3B-Instruct",
+        "local_path_env": "QWEN_3B_PATH",
+        "local_path_candidates": [
+          "../models/Qwen2.5-3B-Instruct",
+          "../models/Qwen/Qwen2.5-3B-Instruct",
+          "../models/Qwen/Qwen2___5-3B-Instruct",
+          "../models/models--Qwen--Qwen2.5-3B-Instruct"
+        ],
+        "max_context_chars": 36000,
+        "generation": {
+          "max_new_tokens": 8192,
+          "max_input_tokens": 23000,
+          "temperature": 0.0,
+          "top_p": null,
+          "do_sample": false,
+          "json_repeat_guard": true,
+          "json_repeat_guard_min_rows": 6,
+          "json_repeat_guard_max_cycle": 4,
+          "json_repeat_guard_check_interval": 16
+        },
+        "resolved_path": "${WORKSPACE}/models/Qwen/Qwen2___5-3B-Instruct",
+        "models_dir": "${WORKSPACE}/models"
+      },
+      "artifact": {
+        "path": "${WORKSPACE}/models/Qwen/Qwen2___5-3B-Instruct",
+        "exists": true,
+        "small_file_sha256": {
+          "config.json": "eed00b17e22553979d090fa492e587e92885e328914c8e0b0b78f0a0d3576b3b",
+          "configuration.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "generation_config.json": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9",
+          "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+          "model.safetensors.index.json": "bc8aaa0c87d4335177e01c765f1de0db81661c67c1a72fbfb0d521b09f5ddc56",
+          "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "weight_manifest": [
+          {
+            "name": "model-00001-of-00002.safetensors",
+            "size": 3968658944,
+            "sha256": "67347b23fb4165b652eb6611f5e1f2a06dfcddba8e909df1b2b0b1857bee06c2"
+          },
+          {
+            "name": "model-00002-of-00002.safetensors",
+            "size": 2203268048,
+            "sha256": "a40d941d0e7e0b966ad8b62bb6d6b7c88cce1299197b599d9d0a4ce59aabfc1d"
+          }
+        ],
+        "directory_signature": "ff56530527d72173181f1856673f408436560335825d46d16d5bb19aaf6d1bd7",
+        "model_id": "Qwen/Qwen2.5-3B-Instruct",
+        "source": "resolved_path"
+      },
+      "effective_generation": {
+        "max_new_tokens": 8192,
+        "temperature": 0.0,
+        "top_p": null,
+        "seed": 1,
+        "max_input_tokens": 23000,
+        "do_sample": false,
+        "json_repeat_guard": true,
+        "json_repeat_guard_min_rows": 6,
+        "json_repeat_guard_max_cycle": 4,
+        "json_repeat_guard_check_interval": 16
+      }
+    },
+    "qwen2_5_7b": {
+      "config": {
+        "display_name": "Qwen2.5-7B-Instruct",
+        "backend": "transformers",
+        "model_id": "Qwen/Qwen2.5-7B-Instruct",
+        "local_path_env": "QWEN_7B_PATH",
+        "local_path_candidates": [
+          "../models/Qwen2.5-7B-Instruct",
+          "../models/Qwen/Qwen2.5-7B-Instruct",
+          "../models/Qwen/Qwen2___5-7B-Instruct",
+          "../models/models--Qwen--Qwen2.5-7B-Instruct"
+        ],
+        "max_context_chars": 48000,
+        "generation": {
+          "max_new_tokens": 8192,
+          "max_input_tokens": 23000,
+          "temperature": 0.0,
+          "top_p": null,
+          "do_sample": false,
+          "json_repeat_guard": true,
+          "json_repeat_guard_min_rows": 6,
+          "json_repeat_guard_max_cycle": 4,
+          "json_repeat_guard_check_interval": 16
+        },
+        "resolved_path": "${WORKSPACE}/models/Qwen/Qwen2___5-7B-Instruct",
+        "models_dir": "${WORKSPACE}/models"
+      },
+      "artifact": {
+        "path": "${WORKSPACE}/models/Qwen/Qwen2___5-7B-Instruct",
+        "exists": true,
+        "small_file_sha256": {
+          "config.json": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c",
+          "configuration.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "generation_config.json": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f",
+          "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+          "model.safetensors.index.json": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028",
+          "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "weight_manifest": [
+          {
+            "name": "model-00001-of-00004.safetensors",
+            "size": 3945441440,
+            "sha256": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7"
+          },
+          {
+            "name": "model-00002-of-00004.safetensors",
+            "size": 3864726352,
+            "sha256": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185"
+          },
+          {
+            "name": "model-00003-of-00004.safetensors",
+            "size": 3864726424,
+            "sha256": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5"
+          },
+          {
+            "name": "model-00004-of-00004.safetensors",
+            "size": 3556377672,
+            "sha256": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd"
+          }
+        ],
+        "directory_signature": "1230b2d7bd1cf1392597d9c0c0d12e5547f805aed741cc9e532a567e1405d386",
+        "model_id": "Qwen/Qwen2.5-7B-Instruct",
+        "source": "resolved_path"
+      },
+      "effective_generation": {
+        "max_new_tokens": 8192,
+        "temperature": 0.0,
+        "top_p": null,
+        "seed": 1,
+        "max_input_tokens": 23000,
+        "do_sample": false,
+        "json_repeat_guard": true,
+        "json_repeat_guard_min_rows": 6,
+        "json_repeat_guard_max_cycle": 4,
+        "json_repeat_guard_check_interval": 16
+      }
+    }
+  },
+  "retrieval_models": {
+    "embedding": {
+      "path": "${WORKSPACE}/models/BAAI/bge-m3",
+      "exists": true,
+      "small_file_sha256": {
+        "1_Pooling/config.json": "e54c164a07274f2eb45bb724f54a79d1efcc90c41573887cd9a29aeee0597352",
+        "config.json": "26159e7ad065073448460117eb24b7a4572f6f4e78eadff65dc0a11c052449fa",
+        "config_sentence_transformers.json": "1eef72430e7194a1e59680e635aed81ffa083f05668dbc5bb1c56c04c0999c38",
+        "configuration.json": "007c616ed9187f4f3d6096ed2d55cece33c3f48866dbd7bc6afefcb9645a37c1",
+        "modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+        "onnx/config.json": "f24afd5de914fba8c668426c43d208a1a54022500c63b2c160be20891686fce8",
+        "onnx/sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+        "onnx/special_tokens_map.json": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+        "onnx/tokenizer.json": "6710678b12670bc442b99edc952c4d996ae309a7020c1fa0096dd245c2faf790",
+        "onnx/tokenizer_config.json": "7e4c1cc848840aeccdd763458c18dd525eb0f795c992e00ebe9c28554e7db2d4",
+        "sentence_bert_config.json": "eb9b44b13c0f52a3b3685c3b1cbdea1ba8b04bea123b98f61610048940776eb1",
+        "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+        "special_tokens_map.json": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+        "tokenizer.json": "21106b6d7dab2952c1d496fb21d5dc9db75c28ed361a05f5020bbba27810dd08",
+        "tokenizer_config.json": "a62b2b6784f990259fddef5f16388693a8043be4f69179e6a5257eeb3f9abac4"
+      },
+      "weight_manifest": [
+        {
+          "name": "colbert_linear.pt",
+          "size": 2100674,
+          "sha256": "19bfbae397c2b7524158c919d0e9b19393c5639d098f0a66932c91ed8f5f9abb"
+        },
+        {
+          "name": "pytorch_model.bin",
+          "size": 2271145830,
+          "sha256": "b5e0ce3470abf5ef3831aa1bd5553b486803e83251590ab7ff35a117cf6aad38"
+        },
+        {
+          "name": "sparse_linear.pt",
+          "size": 3516,
+          "sha256": "45c93804d2142b8f6d7ec6914ae23a1eee9c6a1d27d83d908a20d2afb3595ad9"
+        }
+      ],
+      "directory_signature": "1fd651682ccbcd6a85ca77a97153423723f9dd5d374ea1eefd7c349466069e40"
+    },
+    "reranker": {
+      "path": "${WORKSPACE}/models/BAAI/bge-reranker-v2-m3",
+      "exists": true,
+      "small_file_sha256": {
+        "config.json": "13dcd6c31d9fec9d1d8e158702072f62d7fa7d312a64b9fe057bec9a08cfe41a",
+        "configuration.json": "90dccac936e44dcb4567017a5dbb807b583604032fd53bfe2372a15881ed47e1",
+        "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+        "special_tokens_map.json": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+        "tokenizer.json": "69564b696052886ed0ac63fa393e928384e0f8caada38c1f4864a9bfbf379c15",
+        "tokenizer_config.json": "7e4c1cc848840aeccdd763458c18dd525eb0f795c992e00ebe9c28554e7db2d4"
+      },
+      "weight_manifest": [
+        {
+          "name": "model.safetensors",
+          "size": 2271071852,
+          "sha256": "d9e3e081faff1eefb84019509b2f5558fd74c1a05a2c7db22f74174fcedb5286"
+        }
+      ],
+      "directory_signature": "b0a29de406e5cf064b83d918c6a6db31a47594dc14736dd15bb35909838f275e"
+    }
+  },
+  "runtime_environment": {
+    "python": "3.10.20",
+    "platform": "Linux-6.8.0-110-generic-x86_64-with-glibc2.39",
+    "torch": "2.11.0+cu128",
+    "transformers": "5.1.0",
+    "sentence_transformers": "5.5.0",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "cuda_available": true,
+    "cuda_version": "12.8",
+    "cudnn_version": 91900,
+    "gpu_name": "NVIDIA A800-SXM4-80GB"
+  },
+  "protocol_sha256": "1dd999c71618b64a227d76b94cbd80c9c8faca6c3bbb3e787c8dc9c717eb93fd",
+  "created_at": "2026-08-03 15:08:24"
+}

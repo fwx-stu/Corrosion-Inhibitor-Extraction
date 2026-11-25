@@ -1,0 +1,23 @@
+{
+  "updated_at": "2026-08-03 17:13:24",
+  "run_name": "qwen2_5_3b__b1_section_aware_token_matched__balanced__r1",
+  "paper_id": "xml_9708",
+  "doc_index": 50,
+  "docs_total": 50,
+  "docs_ok": 50,
+  "docs_failed": 0,
+  "parse_errors": 9,
+  "empty_predictions": 0,
+  "empty_prediction_eligible": 50,
+  "input_over_budget": 0,
+  "input_truncations": 0,
+  "output_truncations": 8,
+  "last_doc_sec": 219.937,
+  "elapsed_sec": 3683.358,
+  "eta_sec": 0.0,
+  "records_last": 15,
+  "records_total": 1243,
+  "evidence_last": 44,
+  "evidence_total": 1922,
+  "last_parse_error": "salvaged 17 compact rows from truncated/invalid JSON"
+}

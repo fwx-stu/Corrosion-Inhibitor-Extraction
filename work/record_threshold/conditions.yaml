@@ -1,0 +1,250 @@
+schema_version: 1
+dataset: dev37
+created_at_utc: '2026-08-29T12:04:37+00:00'
+run_roots:
+- output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+instructions: 'Set include: true only for final paper conditions; keep test50 excluded.'
+conditions:
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_14b::q0_safe_full::balanced
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_14b
+  strategy: q0_safe_full
+  prompt: balanced
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_14b::q0_safe_full::precision
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_14b
+  strategy: q0_safe_full
+  prompt: precision
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_14b::q0_safe_full::recall
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_14b
+  strategy: q0_safe_full
+  prompt: recall
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_14b::q1_budgeted_rag::balanced
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_14b
+  strategy: q1_budgeted_rag
+  prompt: balanced
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_14b::q1_budgeted_rag::precision
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_14b
+  strategy: q1_budgeted_rag
+  prompt: precision
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_14b::q1_budgeted_rag::recall
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_14b
+  strategy: q1_budgeted_rag
+  prompt: recall
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_14b::q2_table_aware_rag::balanced
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_14b
+  strategy: q2_table_aware_rag
+  prompt: balanced
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_14b::q2_table_aware_rag::precision
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_14b
+  strategy: q2_table_aware_rag
+  prompt: precision
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_14b::q2_table_aware_rag::recall
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_14b
+  strategy: q2_table_aware_rag
+  prompt: recall
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_3b::q0_safe_full::balanced
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_3b
+  strategy: q0_safe_full
+  prompt: balanced
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_3b::q0_safe_full::precision
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_3b
+  strategy: q0_safe_full
+  prompt: precision
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_3b::q0_safe_full::recall
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_3b
+  strategy: q0_safe_full
+  prompt: recall
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_3b::q1_budgeted_rag::balanced
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_3b
+  strategy: q1_budgeted_rag
+  prompt: balanced
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_3b::q1_budgeted_rag::precision
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_3b
+  strategy: q1_budgeted_rag
+  prompt: precision
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_3b::q1_budgeted_rag::recall
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_3b
+  strategy: q1_budgeted_rag
+  prompt: recall
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_3b::q2_table_aware_rag::balanced
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_3b
+  strategy: q2_table_aware_rag
+  prompt: balanced
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_3b::q2_table_aware_rag::precision
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_3b
+  strategy: q2_table_aware_rag
+  prompt: precision
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_3b::q2_table_aware_rag::recall
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_3b
+  strategy: q2_table_aware_rag
+  prompt: recall
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_7b::q0_safe_full::balanced
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_7b
+  strategy: q0_safe_full
+  prompt: balanced
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_7b::q0_safe_full::precision
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_7b
+  strategy: q0_safe_full
+  prompt: precision
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_7b::q0_safe_full::recall
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_7b
+  strategy: q0_safe_full
+  prompt: recall
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_7b::q1_budgeted_rag::balanced
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_7b
+  strategy: q1_budgeted_rag
+  prompt: balanced
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_7b::q1_budgeted_rag::precision
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_7b
+  strategy: q1_budgeted_rag
+  prompt: precision
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_7b::q1_budgeted_rag::recall
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_7b
+  strategy: q1_budgeted_rag
+  prompt: recall
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_7b::q2_table_aware_rag::balanced
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_7b
+  strategy: q2_table_aware_rag
+  prompt: balanced
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_7b::q2_table_aware_rag::precision
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_7b
+  strategy: q2_table_aware_rag
+  prompt: precision
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true
+- condition_id: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6::qwen2_5_7b::q2_table_aware_rag::recall
+  experiment: corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6
+  model: qwen2_5_7b
+  strategy: q2_table_aware_rag
+  prompt: recall
+  seeds:
+  - '1'
+  prediction_files: 1
+  include: true

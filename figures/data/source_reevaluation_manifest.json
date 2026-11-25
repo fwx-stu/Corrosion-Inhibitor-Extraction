@@ -1,0 +1,28 @@
+{
+  "tool_version": "saved-predictions-038-v1",
+  "source_project": "",
+  "frozen_sha256": "9c4bdaee47e2fbf2b9785234543aac858dd3a645ac4febba14ebc3d784632f55",
+  "smoke_test": false,
+  "status": "complete",
+  "record_threshold": 0.38,
+  "started_at_utc": "2026-09-07T03:21:51.731599+00:00",
+  "matching_order": "threshold_before_hungarian",
+  "evaluator_sha256": "1bcbd9c106490a662bd380a8579e05ab676f56cf45b9f7dadcc773d5ac5ce4a9",
+  "runner_sha256": "0737b7eaa38bc308016b9ab48b6c58fe0cba4d18bbb191924304500ce5c7d7dd",
+  "bootstrap_iterations": 10000,
+  "permutation_iterations": 10000,
+  "seed": 20260710,
+  "scope": "48 formal Qwen runs only; E0-E5 and GLM reference are not included",
+  "pending_manuscript_analyses": [
+    "E0-E5 and GLM reference re-evaluation",
+    "GLM paired comparison (20000 iterations, seed 20260717)",
+    "interaction models, exact-record and threshold-sensitivity diagnostics",
+    "publication figure regeneration"
+  ],
+  "test50_comparison_counts": {
+    "strategy": 81,
+    "model": 63
+  },
+  "runs_evaluated": 48,
+  "finished_at_utc": "2026-09-07T03:33:24.881042+00:00"
+}

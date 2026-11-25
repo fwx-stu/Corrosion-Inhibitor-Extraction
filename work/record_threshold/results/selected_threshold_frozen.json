@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "dataset": "dev37",
+  "frozen_at_utc": "2026-08-30T10:57:09+00:00",
+  "selected_threshold": 0.38,
+  "selection_rule": "maximum pooled micro Matching F1; ties resolved to the largest threshold",
+  "selected_metrics": {
+    "threshold": 0.38,
+    "matching_precision": 0.7623762376237624,
+    "matching_recall": 0.9447852760736196,
+    "matching_f1_micro": 0.8438356164383561,
+    "matching_f1_macro_paper": 0.6564082857561119,
+    "tp": 154,
+    "fp": 48,
+    "fn": 9,
+    "accepted_pairs": 202,
+    "papers": 18,
+    "blocks": 35,
+    "matching_order": "threshold_before_hungarian"
+  },
+  "threshold_scan": {
+    "minimum": 0.3,
+    "maximum": 0.8,
+    "step": 0.01
+  },
+  "primary_matching_order": "threshold_before_hungarian",
+  "alternate_matching_order_diagnostic_only": "hungarian_before_threshold",
+  "alternate_selected_threshold_not_used": 0.38,
+  "bootstrap": {
+    "unit": "paper",
+    "iterations": 10000,
+    "seed": 20260710,
+    "confidence_level": 0.95
+  },
+  "paper_count": 18,
+  "block_count": 35,
+  "annotation_row_count": 309,
+  "gold_file": "input/dev37/gold/dev37.jsonl",
+  "gold_sha256": "67076e06bae2c13a44fd2fb2eb09cf07e94b13c8f9b23186f18d12012cfa6455",
+  "annotations_file": "work/record_threshold/record_threshold_calibration_server_ready.xlsx",
+  "annotations_sha256": "c3fa96c76bbde75eeec364329507cced4e3a1b314754f6acc271bada391e5383",
+  "script_sha256": "cd3927199cf6d86d6fb058bbd118ef8c608288f072a61c5ec53aa2bde1a76ca0",
+  "prediction_files": [
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_14b/q0_safe_full/balanced/r1/predictions.jsonl",
+      "sha256": "bf3e2444f4c36aea54df07fcb53a696995af65a248cbeb2a742baaf28442cc71",
+      "original_sha256": "83828a3a0b284fbc7d0fb85f2552839ec01e61c41048913b50d2279b612298b5"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_14b/q0_safe_full/precision/r1/predictions.jsonl",
+      "sha256": "09eba9c165568ce9da99a24e07fb46b9265c2ee1f01fef49e7998eba22fd6a42",
+      "original_sha256": "80ad22e6ce4c43428bb10116f450bf9c29eee2818247480595157f394f6c0a8d"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_14b/q0_safe_full/recall/r1/predictions.jsonl",
+      "sha256": "5781922d922f7916b780f8c00b282becbc0c3c6f709abc242d3d8cd90a3a988f",
+      "original_sha256": "161fd20a76dcb63bcaf5b8d517c2cce7aa17c5ef40026478ec11531cb5090c12"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_14b/q1_budgeted_rag/balanced/r1/predictions.jsonl",
+      "sha256": "947f760eb43df5660dd567e75f8526f7ae655b10641dfc0895df4700fdd2fe21",
+      "original_sha256": "0d6d8ac608726ee6f48bdcc226347148b5bc0c04916cde6589759fcf2cdc94a7"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_14b/q1_budgeted_rag/precision/r1/predictions.jsonl",
+      "sha256": "264cd820e833e279adbf5788c6ae37bb808368b7b5728a7af0d82b6a432d5266",
+      "original_sha256": "741e3f8fd0c2218382f194dca6b48a34483805425dcbcf70ff1173621306d597"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_14b/q1_budgeted_rag/recall/r1/predictions.jsonl",
+      "sha256": "2d9d36a76d4414e5e04ef11bf02ba809b0cccf6c6ea2b6f8bedb9caff3d70e68",
+      "original_sha256": "439ab08b6ec793e613e3be95334e05991342a89b6b86565ba1106f6e8ba68f84"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_14b/q2_table_aware_rag/balanced/r1/predictions.jsonl",
+      "sha256": "fdcefda81f76c7bfef0451d615a541cb66ac2a59d5a2e4d8f12648c2af22b6ff",
+      "original_sha256": "bb28af04468ee31ddb599a5aea67dffcc077ad9bc54282176e558a830ef24d29"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_14b/q2_table_aware_rag/precision/r1/predictions.jsonl",
+      "sha256": "87e49431b4ff202acda0b4ba108ded5a67127a1022af2a0da2adf83873833c85",
+      "original_sha256": "0a05936a56c211f870a7478f802ae7e230f9b6889f69ef559fbb9544c7010a5b"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_14b/q2_table_aware_rag/recall/r1/predictions.jsonl",
+      "sha256": "d1bacb0083da2c8f3a6246cf3d0ab14c5f21b84c631d7573c409a175d247f451",
+      "original_sha256": "19f4d564a1a47214ca9beab4b587d267cd837346ac63b0b2390688968219f0bd"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_3b/q0_safe_full/balanced/r1/predictions.jsonl",
+      "sha256": "1aca4d20db325875c14393725d5d62d128d316e47c550fd3d794ee6c567dff3c",
+      "original_sha256": "152e86fe045ecedfd3b1d6145d6fd0d3470601c936bf6077cba219d45ba60485"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_3b/q0_safe_full/precision/r1/predictions.jsonl",
+      "sha256": "50109fd7577b3b767794bde95da9ddfce5f7beff6a74a40d8dcdd3b6b9218a29",
+      "original_sha256": "04c11c01a8831c6d56255710980ebcded80b55481d4a98e79cbf6dd3b66096d1"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_3b/q0_safe_full/recall/r1/predictions.jsonl",
+      "sha256": "a5c4fcf1442373c49cab865f421f1c736b42c0876a8fab33693bbcc4bf127e9b",
+      "original_sha256": "8c6bd729066442f8dcd085ef639fdfbe5bf4a705b2380cb382da2e8b352f8fea"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_3b/q1_budgeted_rag/balanced/r1/predictions.jsonl",
+      "sha256": "36fe39a341e0284c9208c046c98844b3768c5519cfca86a6b7394ea4a8eee297",
+      "original_sha256": "ca387aec6ac8ff3382e15e9915638ebe10f322ce7a2db49807c8760bbdcd28af"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_3b/q1_budgeted_rag/precision/r1/predictions.jsonl",
+      "sha256": "583105547318bd775b7b914429764499a4f6a104cca84f243ecdfebb6a8511d5",
+      "original_sha256": "71449ab0ed909b1f29f34fbae7c705ee372ec7dcdeb984e39e2de91de37ac14a"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_3b/q1_budgeted_rag/recall/r1/predictions.jsonl",
+      "sha256": "3f2ed95cbf947c2279da8331851469d43c2d4c41fafb42b8cf154638fd335af1",
+      "original_sha256": "6296c6317d7256382ad4e54891d25c6f082de21f7de9ecebe35a1f1c818448cd"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_3b/q2_table_aware_rag/balanced/r1/predictions.jsonl",
+      "sha256": "624b883fef688096e9052e393400ea3772904dad26691c0e57dbe475e5605892",
+      "original_sha256": "72a59120ef7b8d4285438ee8dcddd2a4b110dad6f3d2789197562058cab4b7e8"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_3b/q2_table_aware_rag/precision/r1/predictions.jsonl",
+      "sha256": "f54a21ac9a09df1e4419f1ef9d29ad72438bbe3fe2c7eb48bf7a227662ad8ce0",
+      "original_sha256": "77b332e660f76440d58a55e99927d6e79a4ec111559a02bfbfe3a9a7c9989f8c"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_3b/q2_table_aware_rag/recall/r1/predictions.jsonl",
+      "sha256": "a958dc18d6f1cb4c8f4aacb96600c48a8eeaf9ff05b5563b94af6cb21373407a",
+      "original_sha256": "19e06d50dbbcc2932a4a9a46e65ed4c9938d2a26ab4501a68cbaef2441a62267"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q0_safe_full/balanced/r1/predictions.jsonl",
+      "sha256": "58d6131ddaa0e1e20de3ecf36b490d65c219af0a1d096c655dc4587c819d8b1b",
+      "original_sha256": "ca730f9e49a2eda284fbc65b605786ed8b8f6f0ea113823202a4a2529128dda5"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q0_safe_full/precision/r1/predictions.jsonl",
+      "sha256": "6562e171a9885d7bde51957880ba4bcf6a83e54e1178de25532647bd260242a9",
+      "original_sha256": "9d684c625e37fcec0d546d34401faee49592c8e9bbaa15072f4df7fbd4df156a"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q0_safe_full/recall/r1/predictions.jsonl",
+      "sha256": "156a71307b2558ea1a517e8ad7a85020f440c31753806d95f3a8faf274451937",
+      "original_sha256": "9c3da3c0d975e019aa87076e850ff77d9c657d3fb0c0f65339de9dad8055e649"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q1_budgeted_rag/balanced/r1/predictions.jsonl",
+      "sha256": "50efa43653d6a8f14ed9f5f283ede36ce09df2fd739ac5eadcacb2cbc4f19a9a",
+      "original_sha256": "d14b6bf26c065dd439971823108f8ae285ad24b62d3d6adf306e006dac0f1771"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q1_budgeted_rag/precision/r1/predictions.jsonl",
+      "sha256": "9bef09fcf81272fe6f3e8ee979b29771f4b25ad22eb279d9585d480e19e2b71c",
+      "original_sha256": "d510f0735da2f58c407bf2e48acf4e0100c83a4362da7d2d6c98ed002275b395"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q1_budgeted_rag/recall/r1/predictions.jsonl",
+      "sha256": "0e362a26efdfd9da8a63af100393d9cc8287465945907d3c74e22e1dd3e3cbd6",
+      "original_sha256": "77edf0922a0e66dae3300a94c1d7a6c99bc733772111f341490b3718a0a04bd2"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q2_table_aware_rag/balanced/r1/predictions.jsonl",
+      "sha256": "d1e00ac01c5442d268657e336c0875e2430586bd816a95135acb37ab0bb47e9f",
+      "original_sha256": "e1b64097b201b1b11afa4ea1d67278a95017756101e488db8e0d071b896b2666"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q2_table_aware_rag/precision/r1/predictions.jsonl",
+      "sha256": "b3fa4e961466b939891681fa13bd44582e231c88cc5e0a96425ddd67667798e5",
+      "original_sha256": "3c6a61d8d467437fabc5dff1cf829e5080bef09420d06a0411fb0cd488d4b91a"
+    },
+    {
+      "path": "output/exp_v2/corrosion_q0q1q2_dev37_prompt_robustness_opt_final_v6/qwen2_5_7b/q2_table_aware_rag/recall/r1/predictions.jsonl",
+      "sha256": "6ff16f77c08b53d8c8ca7b7a68f5fd545deb1b98cc48b54c3fa653a56f26a391",
+      "original_sha256": "666d2bcbeacc53c495d8ff2b14fb8cd489c6c12e0e220993b6cd4825e0142043"
+    }
+  ],
+  "test50_used": false,
+  "original_annotations_sha256": "9033b059cda2587ec8974f398a574269e8499e7da9f256be4ee6defc51540be8",
+  "original_frozen_sha256": "9c4bdaee47e2fbf2b9785234543aac858dd3a645ac4febba14ebc3d784632f55",
+  "release_note": "Prediction JSONL reduced to structured fields; workbook prediction hashes updated; expert labels and block hashes unchanged."
+}

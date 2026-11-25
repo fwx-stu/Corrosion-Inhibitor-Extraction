@@ -1,0 +1,23 @@
+{
+  "updated_at": "2026-07-16 02:49:36",
+  "run_name": "qwen2_5_14b__q1_budgeted_rag__precision__r1",
+  "paper_id": "xml_9172",
+  "doc_index": 37,
+  "docs_total": 37,
+  "docs_ok": 37,
+  "docs_failed": 0,
+  "parse_errors": 0,
+  "empty_predictions": 0,
+  "empty_prediction_eligible": 37,
+  "input_over_budget": 0,
+  "input_truncations": 0,
+  "output_truncations": 0,
+  "last_doc_sec": 36.216,
+  "elapsed_sec": 1884.12,
+  "eta_sec": 0.0,
+  "records_last": 16,
+  "records_total": 782,
+  "evidence_last": 40,
+  "evidence_total": 1397,
+  "last_parse_error": null
+}

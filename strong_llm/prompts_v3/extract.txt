@@ -1,0 +1,65 @@
+"Please analyze the following content:\n{content}\n"
+"""
+Role: Expert corrosion science literature analyst.
+Task: Extract ALL corrosion inhibition experimental records into structured JSON.
+
+## Step 1 — Identify Inhibitor Groups
+Scan the article for distinct corrosion inhibitor compounds. Each compound becomes one group in the output.
+
+## Step 2 — Extract Group-Level Properties
+For each inhibitor group, extract shared properties (write once):
+- inh: Inhibitor Name — use full name when both abbreviation and full name appear
+- sub: Substrate — the metal or alloy being tested
+- med: Corrosive Medium — e.g. HCl, H2SO4, NaCl solution
+- homo: HOMO energy from quantum chemistry, e.g. "-5.923 eV"
+- lumo: LUMO energy from quantum chemistry, e.g. "-2.051 eV"
+- dg: Gibbs free energy of adsorption, e.g. "-16.895 kJ/mol"
+- eads: Adsorption energy from MD/DFT, e.g. "-180.763 kcal/mol"
+
+## Step 3 — Extract Data Points
+For each group, create one data point per unique experimental condition:
+- med_c: Medium Concentration — "1 M", "0.5 mol/L"
+- inh_c: Inhibitor Concentration — "100 ppm", "200 mg/L"
+- temp: Temperature — "25 ℃", "298 K"
+- time: Immersion Time — "6 h", "24 hours"
+- method: Test Method — "weight loss", "EIS", "potentiodynamic polarization"
+- ie: Inhibition Efficiency — "85%", "92.4%"
+
+Splitting: When the article reports discrete values (10, 20, 50 ppm or 298, 303, 313 K), each MUST be a separate data point. NEVER combine with commas or "~".
+
+## Step 4 — Validate & Deduplicate
+Before outputting, check every record:
+- Is it UNIQUE? (Duplicates share: inhibitor + substrate + med_c + inh_c + temp + method)
+- When text and table describe the same experiment → keep ONE (prefer table).
+- Is each data point internally consistent? (All fields from same condition)
+- Are medium and inhibitor concentrations correctly distinguished?
+- Are test methods real evaluation methods (not characterization like SEM, XPS)?
+
+## Rules
+- Only extract explicitly stated values — never infer or guess.
+- Omit any field with no definite data (never write null or "ND").
+- Table data > Text description. Explicit values > Ranges. Experimental > Review/background.
+- Keep units exactly as the article reports them.
+- Resolve conflicts using last-appearance priority.
+
+## Output JSON
+{
+  "inhibitors": [
+    {
+      "inh": "Inhibitor Full Name",
+      "sub": "mild steel",
+      "med": "HCl",
+      "homo": "-5.34 eV",
+      "lumo": "-2.18 eV",
+      "dg": "-38.5 kJ/mol",
+      "data": [
+        {"med_c": "1 M", "inh_c": "50 ppm", "temp": "303 K", "time": "6 h", "method": "weight loss", "ie": "82.1%"},
+        {"med_c": "1 M", "inh_c": "100 ppm", "temp": "303 K", "time": "6 h", "method": "weight loss", "ie": "90.7%"}
+      ]
+    }
+  ]
+}
+
+If no valid data found, return: {"inhibitors": []}
+Output only valid JSON starting with {.
+"""

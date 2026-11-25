@@ -1,0 +1,100 @@
+{
+  "experiment_id": "corrosion_reviewer_controls_test50_v1",
+  "dataset_name": "test50",
+  "dataset_role": "test",
+  "expected_paper_count": 50,
+  "config_path": "configs/experiment_reviewer_controls_test50_v1_cpu_14b.yaml",
+  "created_at": "2026-08-04 01:38:42",
+  "jobs_expected": 12,
+  "jobs": [
+    {
+      "model_key": "qwen2_5_14b",
+      "strategy": "a1_q1_table_budget",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_reviewer_controls_test50_v1/qwen2_5_14b/a1_q1_table_budget/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_14b",
+      "strategy": "a2_q1_condition_anchors",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_reviewer_controls_test50_v1/qwen2_5_14b/a2_q1_condition_anchors/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_14b",
+      "strategy": "b0_uniform_token_matched",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_reviewer_controls_test50_v1/qwen2_5_14b/b0_uniform_token_matched/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_14b",
+      "strategy": "b1_section_aware_token_matched",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_reviewer_controls_test50_v1/qwen2_5_14b/b1_section_aware_token_matched/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_3b",
+      "strategy": "a1_q1_table_budget",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_reviewer_controls_test50_v1/qwen2_5_3b/a1_q1_table_budget/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_3b",
+      "strategy": "a2_q1_condition_anchors",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_reviewer_controls_test50_v1/qwen2_5_3b/a2_q1_condition_anchors/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_3b",
+      "strategy": "b0_uniform_token_matched",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_reviewer_controls_test50_v1/qwen2_5_3b/b0_uniform_token_matched/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_3b",
+      "strategy": "b1_section_aware_token_matched",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_reviewer_controls_test50_v1/qwen2_5_3b/b1_section_aware_token_matched/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_7b",
+      "strategy": "a1_q1_table_budget",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_reviewer_controls_test50_v1/qwen2_5_7b/a1_q1_table_budget/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_7b",
+      "strategy": "a2_q1_condition_anchors",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_reviewer_controls_test50_v1/qwen2_5_7b/a2_q1_condition_anchors/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_7b",
+      "strategy": "b0_uniform_token_matched",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_reviewer_controls_test50_v1/qwen2_5_7b/b0_uniform_token_matched/balanced/r1"
+    },
+    {
+      "model_key": "qwen2_5_7b",
+      "strategy": "b1_section_aware_token_matched",
+      "prompt_variant": "balanced",
+      "seed": 1,
+      "run_dir": "output/exp_v2/corrosion_reviewer_controls_test50_v1/qwen2_5_7b/b1_section_aware_token_matched/balanced/r1"
+    }
+  ],
+  "config_paths": [
+    "configs/experiment_reviewer_controls_test50_v1_gpu_3b7b.yaml",
+    "configs/experiment_reviewer_controls_test50_v1_cpu_14b.yaml"
+  ],
+  "manifest_mode": "merged_split_hardware_batches_v1"
+}

@@ -1,0 +1,49 @@
+"You are a verification expert for corrosion science information extraction.\n\nBelow is an initial extraction result from a corrosion inhibition paper, followed by evidence chunks retrieved from the same paper. Your task is to verify and correct the extraction.\n\n# Initial Extraction Result (to verify)\n{extraction_json}\n\n# Evidence Chunks (from the same paper)\n{evidence_chunks}\n"
+"""
+# Verification Procedure
+Compare every record and field in the initial extraction against the evidence chunks. Apply these steps:
+
+Step 1 — **Correctness check**: Does the extracted value match the evidence? If wrong (number, unit, name), correct it.
+Step 2 — **Fill gaps**: If a field is null but a clear value exists in evidence, fill it.
+Step 3 — **Remove hallucinations**: If a value has NO support in evidence, set it to null.
+Step 4 — **Add missing records**: If evidence reveals experiments missed in the initial extraction, add them.
+Step 5 — **Remove duplicates**: If two records describe the same condition, merge into one.
+
+# Verification Rules
+- Evidence chunks take priority over initial extraction when conflicts arise.
+- Only use values explicitly stated in evidence — no inference or guessing.
+- Do NOT confuse medium concentration with inhibitor concentration.
+- Do NOT confuse test methods with characterization techniques (SEM, XPS, FTIR, AFM).
+- Table data > Text description.
+- Each record must be internally consistent (all fields from same condition).
+
+# Output Format
+{
+  "corrosion_inhibition_analysis": {
+    "records": [
+      {
+        "inhibitor_name": "text or null",
+        "substrate": "text or null",
+        "corrosive_medium": "text or null",
+        "medium_concentration": "value or null",
+        "inhibitor_concentration": "value or null",
+        "temperature": "value or null",
+        "immersion_time": "value or null",
+        "test_method": "text or null",
+        "inhibition_efficiency": "value or null",
+        "homo": "value or null",
+        "lumo": "value or null",
+        "delta_g_ads": "value or null",
+        "adsorption_energy": "value or null"
+      }
+    ]
+  }
+}
+
+Data Rules:
+- Use null if no definite data found in evidence.
+- Use "~" for ranges (e.g. "100~200 ppm").
+- Keep units exactly as reported.
+- Preserve original chemical/material expressions.
+- Output only valid JSON starting with {. No text before or after.
+"""

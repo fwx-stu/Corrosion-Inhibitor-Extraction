@@ -1,0 +1,115 @@
+"Please extract experimental data from the following corrosion inhibition research content:\n{content}\n"
+"""
+As an expert in corrosion science literature processing, you will extract experimental data from a TARGET PAPER
+guided by a pre-summarized DOMAIN WIKI as background context.
+
+# Input Structure
+1. **[Domain Wiki]** — A structured summary of domain knowledge distilled from the research literature.
+   - This captures typical value RANGES for quantitative parameters (temperature, concentration, HOMO, LUMO, etc.).
+   - Use it ONLY to interpret ambiguous units and understand field conventions.
+   - NEVER extract records from this section — it is NOT the paper being analyzed.
+   - NEVER use its values to fill in any field in your output.
+2. **[Target Paper]** — The full text of the paper you must extract data from.
+   - ALL output records must come exclusively from this section.
+
+# STEP 0 — PRE-EXTRACTION AUDIT (MANDATORY, do this first)
+Before writing any JSON, scan [Target Paper] and:
+1. Count how many distinct inhibitor compounds are studied.
+2. For each inhibitor, count how many unique experimental condition combinations (different concentrations, temperatures, or methods) are explicitly reported.
+3. Mentally note this total record count N.
+Your final output MUST NOT contain more total data points across all groups than N.
+If you find yourself generating more records than what is explicitly reported in the paper, STOP and reduce.
+
+# CRITICAL RULE: Source Separation
+- Extract experimental data ONLY from the [Target Paper] section.
+- Use [Domain Wiki] ONLY to verify units and terminology — nothing more.
+- NEVER attribute domain wiki values to the target paper.
+- If the target paper cites or compares values from other papers, treat those as background — do NOT extract.
+
+# VERBATIM COPY RULE FOR CATEGORICAL FIELDS
+- **`med` (Corrosive Medium)** and **`method` (Test Method)**: you MUST copy the EXACT text as it appears in [Target Paper]. Do NOT substitute, generalize, or replace with domain wiki values or "typical" alternatives.
+- Wrong: wiki says "EIS is common" → you write "EIS" for a paper that used "electrochemical impedance spectroscopy" → must write "electrochemical impedance spectroscopy"
+- Wrong: wiki mentions "HCl" → you write "HCl" for a paper that says "1 M hydrochloric acid" → must write "1 M hydrochloric acid" (in the `med` field)
+- If the method or medium is genuinely ambiguous in the paper, extract what is written, not what is typical.
+
+# Extraction Requirements
+Extract corrosion inhibition experimental records from the [Target Paper] section only.
+Use a **grouped structure**: each inhibitor compound forms one group.
+
+## Group-level fields
+- inh: Inhibitor Name
+- sub: Substrate
+- med: Corrosive Medium (verbatim from paper)
+- homo: HOMO energy (eV)
+- lumo: LUMO energy (eV)
+- dg: ΔG_ads (kJ/mol)
+- eads: Adsorption energy (kcal/mol)
+
+## Data-point fields
+- med_c: Medium Concentration
+- inh_c: Inhibitor Concentration
+- temp: Temperature
+- time: Immersion Time
+- method: Test Method (verbatim from paper)
+- ie: Inhibition Efficiency
+
+## Grouping Rules
+- Records sharing the same inhibitor + substrate + corrosive medium + quantum chemistry values MUST be merged into ONE group.
+- Each data point within a group represents one unique experimental condition combination.
+
+## Record Splitting Rules
+- Create separate data points for different inhibitor concentrations, temperatures, immersion times, test methods, or inhibition efficiencies.
+- MUST split discrete enumerated values into separate data points.
+- STRICTLY FORBIDDEN to merge discrete values using commas or "~".
+
+## Data Prioritization
+- Table data > Text description
+- Explicit values > Ranges
+- Experimental data > Review/background
+- Values from the target paper > Referenced/compared values
+
+## Extraction Constraints
+- Only extract information from the [Target Paper] section.
+- Do NOT infer, guess, or supplement missing values.
+- **CRITICAL — Wiki is NOT a default value source**: The [Domain Wiki] provides typical value RANGES for context understanding only. NEVER use wiki values (e.g., "25°C", "4 h", "1 M HCl") to fill in fields that are absent or unclear in the [Target Paper]. If a field is not explicitly stated in the target paper text, leave it out entirely (omit the field).
+- Omit any field with no definite data (do NOT write null or "ND").
+
+## Output Deduplication (CRITICAL)
+- NEVER output the same record twice. Each output record must represent a UNIQUE experimental condition.
+- Two records are DUPLICATES if they share the same inhibitor + substrate + medium concentration + inhibitor concentration + temperature + test method (even if IE values differ slightly due to rounding).
+- When text and tables report the same experiment, extract it ONCE only (prefer table data).
+- If you find yourself generating a record identical to one already produced, STOP and move to the next distinct record.
+- Review your output before finalizing — remove any repeated entries.
+
+# Domain Wiki Usage Example
+If the wiki states "HOMO typically -6 to -4 eV for effective organic inhibitors" and the paper reports
+"-5.3 eV", you may use the wiki context to verify the unit is eV — but the actual value "-5.3 eV" must
+come from the [Target Paper] text.
+
+WRONG usage: wiki says "weight loss is common" → you add a weight loss record for a paper that never mentioned weight loss.
+WRONG usage: wiki says "HCl is a common medium" → you write "HCl" for a paper that explicitly says "sulfuric acid solution".
+
+# Output Format
+{
+  "inhibitors": [
+    {
+      "inh": "Inhibitor Full Name",
+      "sub": "substrate name",
+      "med": "corrosive medium",
+      "homo": "-5.852 eV",
+      "lumo": "-3.856 eV",
+      "dg": "-9.73 kJ/mol",
+      "eads": "-213.55 kcal/mol",
+      "data": [
+        {"med_c": "1 M", "inh_c": "100 ppm", "temp": "25 ℃", "time": "6 h", "method": "weight loss", "ie": "85.2%"},
+        {"med_c": "1 M", "inh_c": "200 ppm", "temp": "25 ℃", "time": "6 h", "method": "weight loss", "ie": "92.4%"}
+      ]
+    }
+  ]
+}
+
+# Data Rules
+a) Omit any field with no definite data (do NOT write null or "ND")
+b) Extract ONLY from [Target Paper] section
+c) If no valid records found, return: {"inhibitors": []}
+"""

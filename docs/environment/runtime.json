@@ -1,0 +1,8 @@
+{
+  "python": "3.10.20",
+  "platform": "Linux-6.8.0-110-generic-x86_64-with-glibc2.39",
+  "torch": "2.11.0+cu128",
+  "cuda": "12.8",
+  "cuda_available": true,
+  "gpu": "NVIDIA A800-SXM4-80GB"
+}

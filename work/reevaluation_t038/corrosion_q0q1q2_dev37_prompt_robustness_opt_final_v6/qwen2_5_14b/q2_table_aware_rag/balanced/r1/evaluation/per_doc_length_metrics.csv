@@ -1,0 +1,6 @@
+strategy,bin,doc_count,record_tp,record_pred_total,record_gold_total,precision,recall,F1
+qwen2_5_14b__q2_table_aware_rag__balanced__r1,0~4999,0,0,0,0,0.0,0.0,0.0
+qwen2_5_14b__q2_table_aware_rag__balanced__r1,5000~9999,0,0,0,0,0.0,0.0,0.0
+qwen2_5_14b__q2_table_aware_rag__balanced__r1,10000~19999,2,27,39,27,0.6923076923076923,1.0,0.8181818181818181
+qwen2_5_14b__q2_table_aware_rag__balanced__r1,20000~39999,16,203,310,239,0.6548387096774193,0.8493723849372385,0.7395264116575592
+qwen2_5_14b__q2_table_aware_rag__balanced__r1,40000+,19,322,407,404,0.7911547911547911,0.7970297029702971,0.7940813810110975

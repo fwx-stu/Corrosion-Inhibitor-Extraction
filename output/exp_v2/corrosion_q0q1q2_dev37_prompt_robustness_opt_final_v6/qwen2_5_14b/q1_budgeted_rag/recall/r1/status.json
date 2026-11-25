@@ -1,0 +1,23 @@
+{
+  "updated_at": "2026-07-16 01:40:17",
+  "run_name": "qwen2_5_14b__q1_budgeted_rag__recall__r1",
+  "paper_id": "xml_9172",
+  "doc_index": 37,
+  "docs_total": 37,
+  "docs_ok": 37,
+  "docs_failed": 0,
+  "parse_errors": 2,
+  "empty_predictions": 0,
+  "empty_prediction_eligible": 37,
+  "input_over_budget": 0,
+  "input_truncations": 0,
+  "output_truncations": 2,
+  "last_doc_sec": 371.853,
+  "elapsed_sec": 12899.281,
+  "eta_sec": 0.0,
+  "records_last": 22,
+  "records_total": 887,
+  "evidence_last": 40,
+  "evidence_total": 1395,
+  "last_parse_error": null
+}

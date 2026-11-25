@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: Please cite this software and the associated manuscript. Cite the archived
+  version DOI once assigned.
+title: 'Structured Corrosion Inhibitor Literature Extraction: The Roles of Evidence
+  Source, Model Capacity, and Document Structure'
+type: software
+version: 0.1.0
+authors:
+- given-names: Wenxuan
+  family-names: Fan
+- given-names: Suyu
+  family-names: Jin
+- given-names: Hengju
+  family-names: Xiang
+- given-names: Jian
+  family-names: Liu
+- given-names: Zhongheng
+  family-names: Fu
+- given-names: Xinzheng
+  family-names: Zhang
+- given-names: Jiamin
+  family-names: Pei
+- given-names: Tian
+  family-names: Zhang
+- given-names: Liang
+  family-names: Li
+- given-names: Dawei
+  family-names: Zhang
+license: MIT

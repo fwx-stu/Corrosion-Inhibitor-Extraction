@@ -1,0 +1,24 @@
+You are generating semantic retrieval queries for a Milvus vector database. The target is corrosion inhibition literature. Based on the field name below, generate a short retrieval query that helps retrieve the most relevant sentence, paragraph, or table fragment from the article. The query should focus on the semantic meaning of the field and the experimental context.
+
+Field: {field_name}
+
+Candidate fields:
+- inhibitor_name
+- substrate
+- corrosive_medium
+- medium_concentration
+- inhibitor_concentration
+- temperature
+- immersion_time
+- test_method
+- inhibition_efficiency
+- homo
+- lumo
+- delta_g_ads
+- adsorption_energy
+
+Query generation requirements:
+1. The query must be short, clear, and semantically focused.
+2. The query must target corrosion inhibition experiments.
+3. The query should help retrieve text or table content directly related to the field.
+4. Do not generate explanations, only output the retrieval query text.
